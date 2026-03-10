@@ -66,6 +66,10 @@ a {
   padding: 1.4rem 0 3.4rem;
 }
 
+.hero-copy {
+  max-width: 620px;
+}
+
 .topbar {
   display: flex;
   align-items: center;
@@ -184,7 +188,9 @@ a {
 .step-card p,
 .collection-card p,
 .ecopoint-card p,
-.map-panel p {
+.map-panel p,
+.demo-card p,
+.practical-card span {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.75;
@@ -268,7 +274,9 @@ a {
 .collection-card,
 .visual-card,
 .ecopoint-card,
-.map-panel {
+.map-panel,
+.demo-card,
+.practical-card {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -308,6 +316,11 @@ a {
 .section-heading,
 .feature-copy {
   max-width: 760px;
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.2rem;
 }
 
 .section-title-row {
@@ -355,6 +368,11 @@ a {
   margin-bottom: var(--space-4);
 }
 
+.section-heading.compact > p:last-child,
+.feature-copy > p:last-of-type {
+  max-width: 62ch;
+}
+
 .highlight-banner {
   display: flex;
   flex-wrap: wrap;
@@ -377,6 +395,8 @@ a {
 .steps-grid,
 .collection-grid,
 .summary-grid,
+.demo-grid,
+.practical-strip,
 .ecopoints-grid,
 .solutions-layout,
 .feature-layout,
@@ -459,7 +479,8 @@ a {
 .impact-card,
 .step-card,
 .collection-card,
-.ecopoint-card {
+.ecopoint-card,
+.demo-card {
   padding: 1.45rem;
 }
 
@@ -468,7 +489,9 @@ a {
 .step-card h3,
 .collection-card h3,
 .ecopoint-card h3,
-.map-panel h3 {
+.map-panel h3,
+.demo-card h3,
+.practical-card strong {
   margin: 0 0 0.65rem;
   font-size: 1.12rem;
 }
@@ -561,6 +584,51 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.demo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.demo-card {
+  background:
+    radial-gradient(circle at top right, rgba(78, 156, 204, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(227, 245, 235, 0.78));
+}
+
+.practical-focus .section-shell {
+  border: 1px solid rgba(33, 99, 74, 0.16);
+  background:
+    radial-gradient(circle at top left, rgba(56, 161, 116, 0.15), transparent 26%),
+    radial-gradient(circle at top right, rgba(78, 156, 204, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(232, 246, 239, 0.92));
+  box-shadow: 0 24px 56px rgba(25, 78, 60, 0.12);
+}
+
+.practical-focus .section-tag {
+  background: rgba(33, 99, 74, 0.12);
+}
+
+.practical-focus .highlight-banner {
+  border-left-width: 6px;
+  background: linear-gradient(90deg, rgba(56, 161, 116, 0.16), rgba(226, 241, 251, 0.7), rgba(255, 255, 255, 0.98));
+}
+
+.practical-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: var(--space-4);
+}
+
+.practical-card {
+  padding: 1.15rem 1.2rem;
+  background:
+    radial-gradient(circle at top right, rgba(56, 161, 116, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(226, 241, 251, 0.78));
+}
+
+.practical-card strong {
+  display: block;
+  color: var(--green-800);
+}
+
 .ecopoints-layout {
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   align-items: start;
@@ -590,6 +658,10 @@ a {
     radial-gradient(circle at top right, rgba(78, 156, 204, 0.18), transparent 34%),
     radial-gradient(circle at bottom left, rgba(56, 161, 116, 0.12), transparent 35%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(226, 241, 251, 0.84));
+}
+
+.practical-focus .ecopoint-card {
+  border-color: rgba(33, 99, 74, 0.14);
 }
 
 .map-panel {
@@ -636,6 +708,8 @@ a {
   .impact-grid,
   .collection-grid,
   .summary-grid,
+  .demo-grid,
+  .practical-strip,
   .ecopoints-layout,
   .ecopoints-grid {
     grid-template-columns: 1fr;
