@@ -3,71 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lixo Eletrônico e Reciclagem</title>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-  >
+  <title>EcoTech | Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero" id="top">
-    <nav class="topbar">
-      <span class="brand">EcoTech</span>
-      <div class="nav-links">
-        <a href="#conceito">O que é</a>
-        <a href="#impactos">Impactos</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#demonstracao">Demonstração</a>
-        <a href="#ecopontos-aracatuba">Araçatuba</a>
-        <a href="#coleta">Coleta</a>
-      </div>
-    </nav>
-
-    <div class="hero-panel">
-      <div class="hero-copy">
-        <p class="eyebrow">Projeto escolar de conscientização ambiental</p>
-        <h1>Lixo eletrônico: descartar do jeito certo ajuda a proteger a cidade e o meio ambiente.</h1>
-        <p class="hero-subtitle">Um site educativo para explicar o problema e mostrar soluções simples.</p>
-        <p class="lead">
-          Celulares, cabos, pilhas, baterias e computadores antigos não devem ir para o lixo comum.
-          Quando esse material é separado e levado ao lugar certo, a poluição diminui e a reciclagem se torna possível.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="#conceito">Entender o tema</a>
-          <a class="button secondary" href="#ecopontos-aracatuba">Ver a parte prática</a>
+  <header class="site-header">
+    <div class="shell">
+      <nav class="topbar" aria-label="Navegação principal">
+        <a class="brand" href="index.html">EcoTech</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav-links" id="site-menu">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="solucoes.html">Soluções</a>
+          <a href="projeto.html">Demonstração</a>
+          <a href="aracatuba.html">Araçatuba-SP</a>
+          <a href="contato-ou-fontes.html">Conclusão</a>
         </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-visual-frame">
-          <img src="assets/hero-ewaste.svg" alt="Ilustração sobre tecnologia, reciclagem e meio ambiente">
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-metrics">
-      <article class="metric-card">
-        <strong>Mais cuidado</strong>
-        <span>Evita a contaminação do solo, da água e dos espaços da cidade.</span>
-      </article>
-      <article class="metric-card">
-        <strong>Mais reaproveitamento</strong>
-        <span>Materiais podem ser reciclados ou usados novamente.</span>
-      </article>
-      <article class="metric-card">
-        <strong>Mais consciência</strong>
-        <span>Informação simples ajuda as pessoas a agir da forma correta.</span>
-      </article>
+      </nav>
     </div>
   </header>
 
-  <main class="page">
+  <main class="page-main">
+    <section class="hero-home">
+      <div class="shell hero-home-panel">
+        <div class="hero-home-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Projeto escolar de conscientização ambiental</p>
+            <h1 class="hero-title">EcoTech: tecnologia consciente também cuida do planeta.</h1>
+            <p class="hero-subtitle">Lixo eletrônico jogado no lugar errado vira poluição. Separado corretamente, vira solução.</p>
+            <p class="lead">
+              O projeto EcoTech explica o que é lixo eletrônico, por que ele é um problema e como a população pode agir.
+              Nesta nova estrutura, o conteúdo foi dividido em páginas para facilitar a leitura e a apresentação em sala.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="aracatuba.html">Ver os ecopontos</a>
+              <a class="button secondary" href="sobre.html">Entender o tema</a>
+            </div>
+          </div>
+
+          <div class="hero-visual-frame">
+            <img src="assets/hero-ewaste.svg" alt="Ilustração sobre reciclagem de eletrônicos, tecnologia e meio ambiente">
+          </div>
+        </div>
+      </div>
+
+      <div class="shell">
+        <div class="hero-metrics">
+          <article class="metric-card">
+            <strong>Mais consciência</strong>
+            <span>Informação clara ajuda a população a descartar corretamente.</span>
+          </article>
+          <article class="metric-card">
+            <strong>Mais organização</strong>
+            <span>O conteúdo foi separado por páginas para facilitar a navegação.</span>
+          </article>
+          <article class="metric-card">
+            <strong>Mais prática</strong>
+            <span>A página de Araçatuba-SP mostra onde levar os resíduos na cidade.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block summary-section">
-      <div class="section-shell">
+      <div class="shell section-shell">
         <div class="section-heading compact">
           <div class="section-title-row">
             <span class="section-icon" aria-hidden="true">
@@ -77,40 +88,26 @@
                 <path d="M16 46h20"></path>
               </svg>
             </span>
-            <p class="section-tag">Resumo do projeto</p>
+            <p class="section-tag">Navegação do site</p>
           </div>
-          <h2>O trabalho pode ser entendido em quatro ideias principais.</h2>
-          <p class="section-subtitle">Um resumo rápido para facilitar a apresentação em sala.</p>
+          <h2>O conteúdo do projeto foi dividido em páginas para ficar mais claro.</h2>
+          <p class="section-subtitle">Cada aba aborda uma parte do trabalho EcoTech.</p>
         </div>
 
         <div class="summary-grid">
-          <article class="summary-card" id="card-conceito">
+          <article class="summary-card">
             <div class="summary-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
                 <rect x="18" y="8" width="28" height="48" rx="6"></rect>
                 <circle cx="32" cy="47" r="2.5"></circle>
               </svg>
             </div>
-            <h3>O que é</h3>
-            <p>Lixo eletrônico é todo aparelho ou peça eletrônica que foi descartado.</p>
-            <a class="card-link" href="#conceito">Ver seção</a>
+            <h3>Sobre</h3>
+            <p>Explica o que é lixo eletrônico e seus impactos no ecossistema.</p>
+            <a class="card-link" href="sobre.html">Abrir página</a>
           </article>
 
-          <article class="summary-card" id="card-impacto">
-            <div class="summary-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M20 46c8-10 17-16 28-18"></path>
-                <path d="M16 40c2-15 15-28 31-30"></path>
-                <path d="M34 10c9 8 14 18 14 30"></path>
-                <path d="M18 48c7 4 17 6 28 6"></path>
-              </svg>
-            </div>
-            <h3>Por que preocupa</h3>
-            <p>O descarte errado pode poluir e causar riscos à saúde.</p>
-            <a class="card-link" href="#impactos">Ver seção</a>
-          </article>
-
-          <article class="summary-card" id="card-reciclagem">
+          <article class="summary-card">
             <div class="summary-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
                 <path d="M30 10l10 10H34c6 4 10 11 10 19"></path>
@@ -120,534 +117,85 @@
                 <path d="M24 36l6 12"></path>
               </svg>
             </div>
-            <h3>O que fazer</h3>
-            <p>Consertar, doar, separar e reciclar são atitudes simples e importantes.</p>
-            <a class="card-link" href="#solucoes">Ver seção</a>
+            <h3>Soluções</h3>
+            <p>Mostra reciclagem, reutilização e ações simples para qualquer pessoa ajudar.</p>
+            <a class="card-link" href="solucoes.html">Abrir página</a>
           </article>
 
-          <article class="summary-card" id="card-descarte">
+          <article class="summary-card">
             <div class="summary-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
                 <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
                 <circle cx="32" cy="28" r="6"></circle>
               </svg>
             </div>
-            <h3>Parte prática</h3>
-            <p>O site mostra os ecopontos de Araçatuba-SP e a demonstração física do projeto.</p>
-            <a class="card-link" href="#ecopontos-aracatuba">Ver seção</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block" id="conceito">
-      <div class="section-shell">
-        <div class="section-heading compact">
-          <div class="section-title-row">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <rect x="18" y="8" width="28" height="48" rx="6"></rect>
-                <circle cx="32" cy="47" r="2.5"></circle>
-              </svg>
-            </span>
-            <p class="section-tag">O que é lixo eletrônico</p>
-          </div>
-          <h2>Nem todo lixo pode ser jogado no lixo comum.</h2>
-          <p class="section-subtitle">Aparelhos eletrônicos precisam de descarte especial.</p>
-          <p>Esses materiais têm peças que podem ser reaproveitadas ou tratadas com segurança.</p>
-        </div>
-
-        <div class="highlight-banner">
-          <strong>Importante:</strong> pilhas, baterias, cabos e aparelhos quebrados não devem ser misturados ao lixo da casa.
-        </div>
-
-        <div class="card-grid">
-          <article class="info-card">
-            <div class="icon">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <rect x="18" y="8" width="28" height="48" rx="6"></rect>
-                <circle cx="32" cy="47" r="2.5"></circle>
-              </svg>
-            </div>
-            <h3>Celulares e tablets</h3>
-            <p>São comuns no dia a dia e possuem bateria e componentes delicados.</p>
+            <h3>Araçatuba-SP</h3>
+            <p>Reúne os ecopontos da cidade com endereço, materiais aceitos e mapa.</p>
+            <a class="card-link" href="aracatuba.html">Abrir página</a>
           </article>
 
-          <article class="info-card">
-            <div class="icon">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <rect x="12" y="16" width="40" height="26" rx="4"></rect>
-                <path d="M24 48h16"></path>
-                <path d="M20 54h24"></path>
-              </svg>
-            </div>
-            <h3>Monitores e TVs</h3>
-            <p>São maiores e precisam de coleta adequada para não causar danos ao ambiente.</p>
-          </article>
-
-          <article class="info-card">
-            <div class="icon">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M20 16h24l6 8v24a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V20a4 4 0 0 1 4-4z"></path>
-                <path d="M44 16v10h10"></path>
-              </svg>
-            </div>
-            <h3>Cabos, pilhas e acessórios</h3>
-            <p>Mesmo pequenos, esses itens também precisam de descarte correto.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block alt" id="impactos">
-      <div class="section-shell feature-layout">
-        <div class="feature-copy">
-          <div class="section-title-row">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M20 46c8-10 17-16 28-18"></path>
-                <path d="M16 40c2-15 15-28 31-30"></path>
-                <path d="M34 10c9 8 14 18 14 30"></path>
-                <path d="M18 48c7 4 17 6 28 6"></path>
-              </svg>
-            </span>
-            <p class="section-tag">Impactos do descarte errado</p>
-          </div>
-          <h2>Por que o descarte incorreto faz mal?</h2>
-          <p class="section-subtitle">O problema afeta o meio ambiente e também as pessoas.</p>
-          <p>Quando o lixo eletrônico é jogado em locais inadequados, ele pode contaminar o solo e a água.</p>
-
-          <div class="impact-grid">
-            <article class="impact-card">
-              <h3>Poluição</h3>
-              <p>Substâncias tóxicas podem atingir o solo e a água.</p>
-            </article>
-            <article class="impact-card">
-              <h3>Riscos à saúde</h3>
-              <p>Pessoas e animais podem entrar em contato com resíduos perigosos.</p>
-            </article>
-            <article class="impact-card">
-              <h3>Desperdício</h3>
-              <p>Materiais úteis são perdidos quando não são reciclados.</p>
-            </article>
-          </div>
-        </div>
-
-        <aside class="visual-card">
-          <div class="visual-card-header">
-            <span class="pill">Impacto ambiental</span>
-          </div>
-          <img src="assets/collection-point.svg" alt="Ilustração de ponto de coleta e descarte consciente">
-          <div class="mini-highlight">O solo e a água podem ser prejudicados por resíduos tóxicos.</div>
-          <p>Por isso, o descarte correto ajuda a manter a cidade mais limpa, segura e organizada.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section-block" id="solucoes">
-      <div class="section-shell">
-        <div class="section-heading compact">
-          <div class="section-title-row">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M30 10l10 10H34c6 4 10 11 10 19"></path>
-                <path d="M44 39l-8 10"></path>
-                <path d="M14 38c0-7 4-14 10-18"></path>
-                <path d="M14 38l10-2"></path>
-                <path d="M24 36l6 12"></path>
-              </svg>
-            </span>
-            <p class="section-tag">Soluções e reciclagem</p>
-          </div>
-          <h2>O que podemos fazer para melhorar?</h2>
-          <p class="section-subtitle">Pequenas atitudes fazem diferença.</p>
-          <p>Antes de descartar um aparelho, vale tentar outra solução. Isso reduz o lixo e ajuda o meio ambiente.</p>
-        </div>
-
-        <div class="solutions-layout">
-          <div class="steps-grid">
-            <article class="step-card">
-              <span class="step-number">1</span>
-              <h3>Consertar</h3>
-              <p>Se o aparelho ainda funciona, vale tentar o reparo.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-number">2</span>
-              <h3>Doar</h3>
-              <p>Equipamentos em bom estado podem ser úteis para outras pessoas.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-number">3</span>
-              <h3>Separar</h3>
-              <p>Pilhas, cabos e baterias devem ficar separados do lixo doméstico.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-number">4</span>
-              <h3>Reciclar</h3>
-              <p>Levar os resíduos a ecopontos e campanhas é a forma correta de descarte.</p>
-            </article>
-          </div>
-
-          <div class="visual-card soft">
-            <div class="visual-card-header">
-              <span class="pill">Ciclo correto</span>
-            </div>
-            <img src="assets/eco-cycle.svg" alt="Ilustração sobre reciclagem, tecnologia e natureza">
-            <div class="mini-highlight">Reciclar economiza recursos naturais e reduz o desperdício.</div>
-            <p>Reciclar eletrônicos permite reaproveitar materiais e diminuir os danos ao meio ambiente.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block alt" id="demonstracao">
-      <div class="section-shell">
-        <div class="section-heading compact">
-          <div class="section-title-row">
-            <span class="section-icon" aria-hidden="true">
+          <article class="summary-card">
+            <div class="summary-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
                 <rect x="12" y="14" width="40" height="36" rx="6"></rect>
                 <path d="M22 24h20"></path>
                 <path d="M22 32h20"></path>
                 <path d="M22 40h12"></path>
               </svg>
-            </span>
-            <p class="section-tag">Demonstração física</p>
-          </div>
-          <h2>O projeto também tem uma parte prática para a apresentação.</h2>
-          <p class="section-subtitle">A ideia é mostrar exemplos reais de lixo eletrônico para a turma.</p>
-          <p>Cabos, carregadores, pilhas e outros itens foram organizados em caixas para representar o problema e a solução.</p>
-        </div>
-
-        <div class="highlight-banner">
-          <strong>Na prática:</strong> a demonstração ajuda a mostrar que o lixo eletrônico faz parte do nosso dia a dia e precisa de descarte correto.
-        </div>
-
-        <div class="demo-grid">
-          <article class="demo-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M20 16h24l6 8v24a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V20a4 4 0 0 1 4-4z"></path>
-                <path d="M44 16v10h10"></path>
-              </svg>
             </div>
-            <h3>Materiais expostos</h3>
-            <p>Foram separados cabos, carregadores, pilhas, baterias e peças eletrônicas antigas.</p>
-          </article>
-
-          <article class="demo-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M16 20h32v28H16z"></path>
-                <path d="M16 28h32"></path>
-                <path d="M26 14v12"></path>
-                <path d="M38 14v12"></path>
-              </svg>
-            </div>
-            <h3>O problema</h3>
-            <p>As caixas mostram que esse tipo de resíduo aparece com frequência em casa e muitas vezes é descartado errado.</p>
-          </article>
-
-          <article class="demo-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                <circle cx="32" cy="28" r="6"></circle>
-              </svg>
-            </div>
-            <h3>A solução</h3>
-            <p>Depois da explicação, o público entende que o correto é separar e levar o material para coleta adequada.</p>
+            <h3>Projeto</h3>
+            <p>Apresenta a parte física do trabalho e a demonstração visual feita pelo grupo.</p>
+            <a class="card-link" href="projeto.html">Abrir página</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-block practical-focus" id="ecopontos-aracatuba">
-      <div class="section-shell">
+    <section class="section-block alt">
+      <div class="shell section-shell">
         <div class="section-heading compact">
           <div class="section-title-row">
             <span class="section-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
-                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                <circle cx="32" cy="28" r="6"></circle>
+                <path d="M18 50V28"></path>
+                <path d="M32 50V14"></path>
+                <path d="M46 50V22"></path>
               </svg>
             </span>
-            <p class="section-tag">Parte prática do trabalho</p>
+            <p class="section-tag">Destaque visual</p>
           </div>
-          <h2>Ecopontos em Araçatuba - SP</h2>
-          <p class="section-subtitle">Aqui está a parte mais prática do projeto: onde a população pode descartar corretamente.</p>
-          <p>Os locais abaixo ajudam os moradores de Araçatuba a saber onde levar lixo eletrônico, lâmpadas, pilhas, baterias e outros materiais.</p>
+          <h2>O lixo eletrônico é um problema real e crescente.</h2>
+          <p class="section-subtitle">Por isso, a conscientização ambiental precisa ser simples, visual e prática.</p>
         </div>
 
-        <div class="highlight-banner">
-          <strong>Destaque:</strong> esta seção mostra lugares reais da cidade e pode ser usada como exemplo prático durante a apresentação.
-        </div>
-
-        <div class="practical-strip">
-          <article class="practical-card">
-            <strong>Onde levar</strong>
-            <span>Ecopontos e um PEV oficial da Secretaria de Meio Ambiente.</span>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <strong>62 milhões</strong>
+            <span>de toneladas de lixo eletrônico foram geradas no mundo em 2022.</span>
           </article>
-          <article class="practical-card">
-            <strong>O que observar</strong>
-            <span>Endereço, materiais aceitos e horário de funcionamento.</span>
+          <article class="stat-card">
+            <strong>22,3%</strong>
+            <span>foi oficialmente coletado e reciclado de forma adequada no mesmo período.</span>
           </article>
-          <article class="practical-card">
-            <strong>Como usar</strong>
-            <span>Separar o resíduo em casa e escolher o ponto de coleta mais próximo.</span>
-          </article>
-        </div>
-
-        <div class="ecopoints-layout">
-          <div class="ecopoints-grid">
-            <article class="ecopoint-card">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                  <circle cx="32" cy="28" r="6"></circle>
-                </svg>
-              </div>
-              <h3>Ecoponto Lago Azul</h3>
-              <p><strong>Endereço:</strong> cruzamento entre a Av. Juscelino Kubitschek e a Rua José Guerra.</p>
-              <p><strong>Aceita:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> todos os dias, 24h.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Juscelino+Kubitschek+e+Rua+Jose+Guerra%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-
-            <article class="ecopoint-card">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                  <circle cx="32" cy="28" r="6"></circle>
-                </svg>
-              </div>
-              <h3>Ecoponto Claudionor Cinti</h3>
-              <p><strong>Endereço:</strong> cruzamento entre a Av. Juscelino Kubitschek e a Rua Adalberto da Cunha Capela.</p>
-              <p><strong>Aceita:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> todos os dias, 24h.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Juscelino+Kubitschek+e+Rua+Adalberto+da+Cunha+Capela%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-
-            <article class="ecopoint-card">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                  <circle cx="32" cy="28" r="6"></circle>
-                </svg>
-              </div>
-              <h3>Ecoponto São José</h3>
-              <p><strong>Endereço:</strong> cruzamento entre a Rua Rafael Manarelli e a Rua Deodato Izique.</p>
-              <p><strong>Aceita:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> todos os dias, 24h.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Rafael+Manarelli+e+Rua+Deodato+Izique%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-
-            <article class="ecopoint-card">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                  <circle cx="32" cy="28" r="6"></circle>
-                </svg>
-              </div>
-              <h3>Ecoponto Country</h3>
-              <p><strong>Endereço:</strong> Av. Odorindo Perenha, 2220, em frente ao antigo Country Clube.</p>
-              <p><strong>Aceita:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> todos os dias, 24h.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Odorindo+Perenha%2C+2220%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-
-            <article class="ecopoint-card">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                  <circle cx="32" cy="28" r="6"></circle>
-                </svg>
-              </div>
-              <h3>Ecoponto Fundadores</h3>
-              <p><strong>Endereço:</strong> Av. dos Fundadores, 4783, no final da avenida.</p>
-              <p><strong>Aceita:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> todos os dias, 24h.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+dos+Fundadores%2C+4783%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-
-            <article class="ecopoint-card emphasis">
-              <div class="icon small">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <rect x="12" y="14" width="40" height="36" rx="6"></rect>
-                  <path d="M22 24h20"></path>
-                  <path d="M22 32h20"></path>
-                  <path d="M22 40h12"></path>
-                </svg>
-              </div>
-              <h3>PEV da Secretaria de Meio Ambiente</h3>
-              <p><strong>Endereço:</strong> Av. Doutor Alcides Fagundes Chagas, 222, bairro Aviação.</p>
-              <p><strong>Aceita:</strong> pequenas quantidades de recicláveis, lâmpadas e baterias domésticas.</p>
-              <p><strong>Horário:</strong> de segunda a sexta, das 8h às 17h.</p>
-              <p><strong>Indicado para:</strong> pilhas, baterias e materiais menores.</p>
-              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Doutor+Alcides+Fagundes+Chagas%2C+222%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-            </article>
-          </div>
-
-          <aside class="map-panel">
-            <div class="map-panel-copy">
-              <span class="pill">Mapa simples</span>
-              <h3>Localização dos pontos de descarte</h3>
-              <p>O mapa ajuda a visualizar os ecopontos de Araçatuba-SP de forma rápida.</p>
-              <p>Clique nos marcadores para ver o nome do local, o endereço e o tipo de material aceito.</p>
-            </div>
-            <div id="ecopontos-map" aria-label="Mapa com a localização dos ecopontos em Araçatuba"></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block alt" id="coleta">
-      <div class="section-shell">
-        <div class="section-heading compact">
-          <div class="section-title-row">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                <circle cx="32" cy="28" r="6"></circle>
-              </svg>
-            </span>
-            <p class="section-tag">Onde procurar coleta</p>
-          </div>
-          <h2>Onde encontrar pontos de coleta em outras cidades?</h2>
-          <p class="section-subtitle">Além de Araçatuba, outras cidades também têm locais de descarte.</p>
-          <p>Esses são os tipos de lugares mais comuns para procurar quando você quiser descartar lixo eletrônico.</p>
-        </div>
-
-        <div class="highlight-banner">
-          <strong>Dica:</strong> antes de sair de casa, confirme o horário de funcionamento e os materiais aceitos.
-        </div>
-
-        <div class="collection-grid">
-          <article class="collection-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
-                <circle cx="32" cy="28" r="6"></circle>
-              </svg>
-            </div>
-            <h3>Ecopontos</h3>
-            <p>São locais da prefeitura ou de reciclagem preparados para receber resíduos diversos.</p>
-          </article>
-
-          <article class="collection-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <rect x="12" y="14" width="40" height="36" rx="6"></rect>
-                <path d="M22 24h20"></path>
-                <path d="M22 32h20"></path>
-                <path d="M22 40h12"></path>
-              </svg>
-            </div>
-            <h3>Lojas e assistências</h3>
-            <p>Muitas empresas recebem aparelhos antigos e acessórios usados.</p>
-          </article>
-
-          <article class="collection-card">
-            <div class="icon small">
-              <svg viewBox="0 0 64 64" aria-hidden="true">
-                <path d="M16 20h32v28H16z"></path>
-                <path d="M16 28h32"></path>
-                <path d="M26 14v12"></path>
-                <path d="M38 14v12"></path>
-              </svg>
-            </div>
-            <h3>Campanhas locais</h3>
-            <p>Escolas, eventos e ações ambientais podem organizar recolhimento em datas especiais.</p>
-          </article>
-
-          <article class="collection-card callout">
-            <h3>Busca rápida</h3>
-            <p>Pesquise por "coleta de lixo eletrônico + nome da sua cidade" para encontrar opções próximas.</p>
-            <a class="text-link" href="#top">Voltar ao topo</a>
+          <article class="stat-card">
+            <strong>1 projeto</strong>
+            <span>pode ajudar a informar, conscientizar e orientar a comunidade escolar.</span>
           </article>
         </div>
       </div>
     </section>
   </main>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
-  <script>
-    const ecopontosAracatuba = [
-      {
-        name: "Ecoponto Lago Azul",
-        address: "Av. Juscelino Kubitschek e Rua José Guerra",
-        materials: "Entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas",
-        lat: -21.2369994,
-        lon: -50.4579689
-      },
-      {
-        name: "Ecoponto Claudionor Cinti",
-        address: "Av. Juscelino Kubitschek e Rua Adalberto da Cunha Capela",
-        materials: "Entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas",
-        lat: -21.2302376,
-        lon: -50.4713378
-      },
-      {
-        name: "Ecoponto São José",
-        address: "Rua Rafael Manarelli e Rua Deodato Izique",
-        materials: "Entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas",
-        lat: -21.2001,
-        lon: -50.474
-      },
-      {
-        name: "Ecoponto Country",
-        address: "Av. Odorindo Perenha, 2220",
-        materials: "Entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas",
-        lat: -21.2186112,
-        lon: -50.4104048
-      },
-      {
-        name: "Ecoponto Fundadores",
-        address: "Av. dos Fundadores, 4783",
-        materials: "Entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas",
-        lat: -21.191059,
-        lon: -50.4748018
-      },
-      {
-        name: "PEV da Secretaria de Meio Ambiente",
-        address: "Av. Doutor Alcides Fagundes Chagas, 222",
-        materials: "Lâmpadas, baterias domésticas e recicláveis em pequenas quantidades",
-        lat: -21.1981831,
-        lon: -50.431116
-      }
-    ];
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <div class="footer-minimal">
+        <strong>EcoTech</strong>
+        <p>Projeto escolar sobre conscientização e descarte correto de lixo eletrônico.</p>
+      </div>
+      <a class="footer-link" href="contato-ou-fontes.html#conclusao">Ver conclusão do projeto</a>
+    </div>
+  </footer>
 
-    const mapElement = document.getElementById("ecopontos-map");
-
-    if (mapElement) {
-      const map = L.map("ecopontos-map", {
-        scrollWheelZoom: false
-      }).setView([-21.2087, -50.4456], 12);
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      const bounds = [];
-
-      ecopontosAracatuba.forEach((point) => {
-        const marker = L.marker([point.lat, point.lon]).addTo(map);
-        marker.bindPopup(
-          "<strong>" + point.name + "</strong><br>" +
-          point.address + "<br>" +
-          point.materials
-        );
-        bounds.push([point.lat, point.lon]);
-      });
-
-      if (bounds.length) {
-        map.fitBounds(bounds, { padding: [28, 28] });
-      }
-    }
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

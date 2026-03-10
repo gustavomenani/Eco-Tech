@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTech | Ecopontos em Araçatuba-SP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <nav class="topbar" aria-label="Navegação principal">
+        <a class="brand" href="index.html">EcoTech</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav-links" id="site-menu">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="solucoes.html">Soluções</a>
+          <a href="projeto.html">Demonstração</a>
+          <a href="aracatuba.html">Araçatuba-SP</a>
+          <a href="contato-ou-fontes.html">Conclusão</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="shell page-hero-panel">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy">
+            <p class="eyebrow">Aplicação prática do projeto</p>
+            <h1 class="page-title">Ecopontos em Araçatuba-SP</h1>
+            <p class="hero-subtitle">Esta página mostra onde a população pode levar lixo eletrônico na cidade.</p>
+          </div>
+          <div class="page-hero-visual">
+            <img src="assets/collection-point.svg" alt="Ilustração de ponto de coleta e descarte consciente">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block practical-focus">
+      <div class="shell section-shell">
+        <span class="section-anchor" id="aracatuba-sp" aria-hidden="true"></span>
+        <div class="section-heading compact">
+          <div class="section-title-row">
+            <span class="section-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                <circle cx="32" cy="28" r="6"></circle>
+              </svg>
+            </span>
+            <p class="section-tag">Veja onde descartar</p>
+          </div>
+          <h2>Locais de descarte correto em Araçatuba-SP</h2>
+          <p class="section-subtitle">Os cartões abaixo mostram endereços, materiais aceitos e links de localização.</p>
+        </div>
+
+        <div class="highlight-banner">
+          <strong>Observação importante:</strong> confirme o horário e os materiais aceitos antes de sair de casa.
+        </div>
+
+        <div class="practical-strip">
+          <article class="practical-card">
+            <strong>Endereço</strong>
+            <span>Todos os pontos estão organizados para facilitar a localização.</span>
+          </article>
+          <article class="practical-card">
+            <strong>Materiais aceitos</strong>
+            <span>Os cartões indicam quais resíduos eletrônicos podem ser entregues.</span>
+          </article>
+          <article class="practical-card">
+            <strong>Mapa</strong>
+            <span>O mapa ajuda a visualizar os pontos de descarte na cidade.</span>
+          </article>
+        </div>
+
+        <div class="ecopoints-layout">
+          <div class="ecopoints-grid">
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                  <circle cx="32" cy="28" r="6"></circle>
+                </svg>
+              </div>
+              <h3>Ecoponto Lago Azul</h3>
+              <p><strong>Endereço:</strong> cruzamento entre a Av. Juscelino Kubitschek e a Rua José Guerra.</p>
+              <p><strong>Materiais aceitos:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> todos os dias, 24h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Juscelino+Kubitschek+e+Rua+Jose+Guerra%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                  <circle cx="32" cy="28" r="6"></circle>
+                </svg>
+              </div>
+              <h3>Ecoponto Claudionor Cinti</h3>
+              <p><strong>Endereço:</strong> cruzamento entre a Av. Juscelino Kubitschek e a Rua Adalberto da Cunha Capela.</p>
+              <p><strong>Materiais aceitos:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> todos os dias, 24h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Av.+Juscelino+Kubitschek+e+Rua+Adalberto+da+Cunha+Capela%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                  <circle cx="32" cy="28" r="6"></circle>
+                </svg>
+              </div>
+              <h3>Ecoponto São José</h3>
+              <p><strong>Endereço:</strong> cruzamento entre a Rua Rafael Manarelli e a Rua Deodato Izique.</p>
+              <p><strong>Materiais aceitos:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> todos os dias, 24h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Rafael+Manarelli+e+Rua+Deodato+Izique%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                  <circle cx="32" cy="28" r="6"></circle>
+                </svg>
+              </div>
+              <h3>Ecoponto Country</h3>
+              <p><strong>Endereço:</strong> Av. Odorindo Perenha, 2220, em frente ao antigo Country Clube.</p>
+              <p><strong>Materiais aceitos:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> todos os dias, 24h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Odorindo+Perenha%2C+2220%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                  <circle cx="32" cy="28" r="6"></circle>
+                </svg>
+              </div>
+              <h3>Ecoponto Fundadores</h3>
+              <p><strong>Endereço:</strong> Av. dos Fundadores, 4783, no final da avenida.</p>
+              <p><strong>Materiais aceitos:</strong> entulho, recicláveis, móveis, eletrodomésticos, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> todos os dias, 24h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+dos+Fundadores%2C+4783%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+
+            <article class="ecopoint-card">
+              <div class="icon small">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <rect x="12" y="14" width="40" height="36" rx="6"></rect>
+                  <path d="M22 24h20"></path>
+                  <path d="M22 32h20"></path>
+                  <path d="M22 40h12"></path>
+                </svg>
+              </div>
+              <h3>PEV da Secretaria de Meio Ambiente</h3>
+              <p><strong>Endereço:</strong> Av. Doutor Alcides Fagundes Chagas, 222, bairro Aviação.</p>
+              <p><strong>Materiais aceitos:</strong> pequenas quantidades de recicláveis, lâmpadas e baterias domésticas.</p>
+              <p><strong>Horário:</strong> de segunda a sexta, das 8h às 17h.</p>
+              <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Doutor+Alcides+Fagundes+Chagas%2C+222%2C+Aracatuba+-+SP" target="_blank" rel="noopener noreferrer">Abrir localização</a>
+            </article>
+          </div>
+
+          <aside class="map-panel">
+            <div class="section-heading compact">
+              <p class="pill">Mapa simples</p>
+              <h3>Localização dos ecopontos</h3>
+              <p>O mapa foi colocado em um bloco separado para facilitar a leitura e evitar conflito com o cabeçalho.</p>
+            </div>
+            <div id="ecopontos-map" aria-label="Mapa com a localização dos ecopontos de Araçatuba"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <div class="footer-minimal">
+        <strong>EcoTech</strong>
+        <p>A parte prática do projeto mostra onde descartar resíduos eletrônicos em Araçatuba-SP.</p>
+      </div>
+      <a class="footer-link" href="contato-ou-fontes.html#conclusao">Ler conclusão</a>
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+    defer
+  ></script>
+  <script src="site.js" defer></script>
+</body>
+</html>
