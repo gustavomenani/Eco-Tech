@@ -1,0 +1,14 @@
+{
+  "name": "ecotech-site",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "quality:visual": "node scripts/visual_smoke.cjs"
+  },
+  "devDependencies": {
+    "lighthouse": "13.0.3",
+    "playwright": "1.58.2"
+  }
+}

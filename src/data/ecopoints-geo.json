@@ -1,0 +1,53 @@
+{
+  "points": [
+    {
+      "id": "lago-azul",
+      "aliases": [
+        "Ecoponto Lago Azul"
+      ],
+      "lat": -21.2369994,
+      "lon": -50.4579689
+    },
+    {
+      "id": "claudionor-cinti",
+      "aliases": [
+        "Ecoponto Claudionor Cinti"
+      ],
+      "lat": -21.2302376,
+      "lon": -50.4713378
+    },
+    {
+      "id": "sao-jose",
+      "aliases": [
+        "Ecoponto São José"
+      ],
+      "lat": -21.2001,
+      "lon": -50.474
+    },
+    {
+      "id": "country",
+      "aliases": [
+        "Ecoponto Country"
+      ],
+      "lat": -21.2186112,
+      "lon": -50.4104048
+    },
+    {
+      "id": "fundadores",
+      "aliases": [
+        "Ecoponto Fundadores"
+      ],
+      "lat": -21.191059,
+      "lon": -50.4748018
+    },
+    {
+      "id": "pev-secretaria-meio-ambiente",
+      "aliases": [
+        "PEV da Secretaria de Meio Ambiente",
+        "PEV da Secretaria Municipal de Meio Ambiente e Sustentabilidade"
+      ],
+      "lat": -21.1981831,
+      "lon": -50.431116
+    }
+  ]
+}

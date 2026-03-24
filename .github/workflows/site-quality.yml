@@ -1,0 +1,114 @@
+name: Site Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate PWA Icons
+        run: python scripts/generate_icons.py
+
+      - name: Build Static Site
+        run: python scripts/build_site.py
+
+      - name: Check Generated Site
+        run: python scripts/check_site.py
+
+      - name: Install Quality Tooling
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Resolve Chromium Path
+        run: echo "CHROME_PATH=$(node -e \"console.log(require('playwright').chromium.executablePath())\")" >> "$GITHUB_ENV"
+
+      - name: Start Local Server
+        run: |
+          mkdir -p artifacts/lighthouse artifacts/visual
+          python -m http.server 4173 --directory dist > artifacts/server.log 2>&1 &
+          echo $! > artifacts/server.pid
+
+      - name: Wait For Server
+        run: |
+          python - <<'PY'
+          import time
+          import urllib.request
+
+          url = "http://127.0.0.1:4173/index.html"
+          for _ in range(60):
+              try:
+                  with urllib.request.urlopen(url, timeout=2) as response:
+                      if response.status == 200:
+                          break
+              except Exception:
+                  time.sleep(1)
+          else:
+              raise SystemExit("Servidor local nao respondeu a tempo.")
+          PY
+
+      - name: Run Lighthouse On Home
+        run: >
+          npx lighthouse http://127.0.0.1:4173/index.html
+          --output=json
+          --output-path=artifacts/lighthouse/index.json
+          --only-categories=performance,accessibility,best-practices,seo
+          --chrome-path="$CHROME_PATH"
+          --chrome-flags="--headless=new --no-sandbox"
+
+      - name: Run Lighthouse On Ecopoints
+        run: >
+          npx lighthouse http://127.0.0.1:4173/aracatuba.html
+          --output=json
+          --output-path=artifacts/lighthouse/aracatuba.json
+          --only-categories=performance,accessibility,best-practices,seo
+          --chrome-path="$CHROME_PATH"
+          --chrome-flags="--headless=new --no-sandbox"
+
+      - name: Validate Lighthouse Scores
+        run: |
+          python scripts/check_lighthouse.py artifacts/lighthouse/index.json
+          python scripts/check_lighthouse.py artifacts/lighthouse/aracatuba.json --performance 0.6
+
+      - name: Capture Visual Smoke Screenshots
+        env:
+          BASE_URL: http://127.0.0.1:4173
+          VISUAL_OUTPUT_DIR: artifacts/visual
+        run: npm run quality:visual
+
+      - name: Stop Local Server
+        if: always()
+        run: |
+          if [ -f artifacts/server.pid ]; then
+            kill "$(cat artifacts/server.pid)" || true
+          fi
+
+      - name: Upload Quality Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-quality-artifacts
+          path: artifacts

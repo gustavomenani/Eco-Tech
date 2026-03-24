@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- SYNC:SEO START -->
+  <title>EcoTech | Ecopontos em Araçatuba-SP</title>
+  <meta name="description" content="Consulte os ecopontos em Araçatuba-SP com endereços, materiais aceitos, horários e mapa local para descarte correto.">
+  <meta name="theme-color" content="#15803d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="canonical" href="https://gustavomenani.github.io/SITE-LPCA/aracatuba.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EcoTech | Ecopontos em Araçatuba-SP">
+  <meta property="og:description" content="Consulte os ecopontos em Araçatuba-SP com endereços, materiais aceitos, horários e mapa local para descarte correto.">
+  <meta property="og:url" content="https://gustavomenani.github.io/SITE-LPCA/aracatuba.html">
+  <meta property="og:image" content="https://gustavomenani.github.io/SITE-LPCA/assets/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EcoTech | Ecopontos em Araçatuba-SP">
+  <meta name="twitter:description" content="Consulte os ecopontos em Araçatuba-SP com endereços, materiais aceitos, horários e mapa local para descarte correto.">
+  <meta name="twitter:image" content="https://gustavomenani.github.io/SITE-LPCA/assets/social-card.svg">
+  <!-- SYNC:SEO END -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+  <header class="site-header">
+  <div class="shell">
+    <nav class="topbar" aria-label="Navegação principal">
+      <a class="brand" href="index.html">EcoTech</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menu principal">
+        <span class="menu-toggle-label">Menu</span>
+        <span class="menu-toggle-bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <div class="nav-links" id="site-menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="solucoes.html">Soluções</a>
+        <a href="projeto.html">Projeto</a>
+        <a href="aracatuba.html">Ecopontos</a>
+        <a href="contato-ou-fontes.html">Fontes</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main class="page-main" id="main-content" tabindex="-1">
+    <section class="page-hero">
+      <div class="shell page-hero-panel">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy">
+            <p class="eyebrow">Aplicação prática do projeto</p>
+            <h1 class="page-title">Ecopontos em Araçatuba-SP</h1>
+            <p class="hero-subtitle">Esta página mostra onde a população pode levar lixo eletrônico na cidade, com busca, filtro e apoio visual por mapa.</p>
+          </div>
+          <div class="page-hero-visual">
+            <img src="assets/collection-point.svg" alt="Ilustração de ponto de coleta e descarte consciente" width="600" height="460" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block practical-focus">
+      <div class="shell section-shell">
+        <span class="section-anchor" id="aracatuba-sp" aria-hidden="true"></span>
+        <div class="section-heading compact">
+          <div class="section-title-row">
+            <span class="section-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M32 56s18-12 18-28a18 18 0 1 0-36 0c0 16 18 28 18 28Z"></path>
+                <circle cx="32" cy="28" r="6"></circle>
+              </svg>
+            </span>
+            <p class="section-tag">Veja onde descartar</p>
+          </div>
+          <h2>Locais de descarte correto em Araçatuba-SP</h2>
+          <p class="section-subtitle">Os cartões abaixo mostram endereços, materiais aceitos e links de localização.</p>
+        </div>
+
+        <div class="highlight-banner">
+          <strong>Observação importante:</strong> confirme o horário e os materiais aceitos antes de sair de casa.
+        </div>
+
+        <div class="ecopoints-toolbar">
+          <div class="filter-bar" role="search" aria-label="Filtrar ecopontos de Araçatuba">
+            <div class="filter-field">
+              <label for="ecopoints-search">Buscar por endereço, bairro ou material</label>
+              <input class="filter-input" id="ecopoints-search" type="search" placeholder="Ex.: bateria, Fundadores, Aviação">
+            </div>
+            <div class="filter-field">
+              <label for="ecopoints-type">Tipo de ponto</label>
+              <select class="filter-select" id="ecopoints-type">
+                <option value="all">Todos os pontos</option>
+                <option value="ecoponto">Somente ecopontos</option>
+                <option value="pev">Somente PEV</option>
+              </select>
+            </div>
+          </div>
+          <div class="material-filter-shell">
+            <p class="filter-label" id="ecopoints-materials-label">Filtrar por material aceito</p>
+            <div class="material-chip-list" id="ecopoints-materials" role="toolbar" aria-labelledby="ecopoints-materials-label">
+              <button class="material-chip is-active" type="button" data-material-key="all" aria-pressed="true">Todos os materiais</button>
+            </div>
+          </div>
+          <p class="ecopoints-status" id="ecopoints-status" aria-live="polite">Carregando os pontos disponíveis...</p>
+        </div>
+
+        <div class="practical-strip">
+          <article class="practical-card">
+            <strong>Endereço</strong>
+            <span>Todos os pontos estão organizados para facilitar a localização.</span>
+          </article>
+          <article class="practical-card">
+            <strong>Materiais aceitos</strong>
+            <span>Os cartões indicam quais resíduos eletrônicos podem ser entregues.</span>
+          </article>
+          <article class="practical-card">
+            <strong>Mapa</strong>
+            <span>O mapa ajuda a visualizar os pontos de descarte na cidade.</span>
+          </article>
+        </div>
+
+        <div class="ecopoints-layout">
+          <div class="ecopoints-grid" id="ecopoints-list">
+          <!-- ECOPOINTS_CARDS_START -->
+            <p class="source-meta">Os cartões de ecopontos são gerados automaticamente a partir da base em <code>src/data/ecopontos-aracatuba.json</code>.</p>
+          <!-- ECOPOINTS_CARDS_END -->
+          </div>
+
+          <aside class="map-panel">
+            <div class="section-heading compact">
+              <p class="pill">Mapa interativo</p>
+              <h3>Mapa real dos ecopontos</h3>
+              <p>O destaque abaixo abre um mapa real com a região do ponto selecionado. Se a visualização externa falhar, o site usa automaticamente o mapa esquemático como reserva.</p>
+            </div>
+            <div id="ecopontos-map" aria-live="polite">
+              <p class="map-fallback">Carregando o mapa dos ecopontos...</p>
+            </div>
+            <noscript>
+              <p class="map-fallback">O mapa interativo precisa de JavaScript. Os cartões com endereços e links continuam disponíveis ao lado.</p>
+            </noscript>
+            <!-- ECOPOINTS_SOURCE_NOTE -->
+            <p class="source-meta source-meta-inline">Fonte dos ecopontos indisponível.</p>
+            <!-- ECOPOINTS_SOURCE_NOTE END -->
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="shell footer-shell footer-shell-shared">
+    <div class="footer-minimal">
+      <strong>EcoTech</strong>
+      <p>Projeto escolar sobre conscientização, descarte correto e soluções para o lixo eletrônico.</p>
+      <span class="footer-meta">Última sincronização: 2026-03-17</span>
+    </div>
+    <nav class="footer-nav" aria-label="Navegação do rodapé">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="solucoes.html">Soluções</a>
+      <a href="projeto.html">Projeto</a>
+      <a href="aracatuba.html">Ecopontos</a>
+      <a href="contato-ou-fontes.html">Fontes</a>
+    </nav>
+  </div>
+</footer>
+  <script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">Video Momento Ambiental</title>
+  <desc id="desc">Miniatura ilustrada para o video introdutorio sobre lixo eletronico.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="55%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#86efac"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="32" fill="url(#bg)"/>
+  <circle cx="136" cy="116" r="78" fill="rgba(255,255,255,0.10)"/>
+  <circle cx="694" cy="458" r="110" fill="rgba(255,255,255,0.10)"/>
+  <rect x="60" y="60" width="680" height="440" rx="30" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.24)"/>
+  <rect x="96" y="100" width="110" height="36" rx="18" fill="#dcfce7"/>
+  <text x="151" y="124" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#166534">Video</text>
+  <text x="96" y="194" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">Momento</text>
+  <text x="96" y="254" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">Ambiental</text>
+  <text x="96" y="322" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#ecfdf5">explicacao simples e direta</text>
+  <text x="96" y="358" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#ecfdf5">para abrir a apresentacao</text>
+  <g transform="translate(540 162)">
+    <rect width="156" height="226" rx="26" fill="#ffffff" opacity="0.95"/>
+    <circle cx="78" cy="113" r="54" fill="#dcfce7"/>
+    <path d="M64 82l52 31-52 31Z" fill="#15803d"/>
+    <rect x="34" y="184" width="88" height="18" rx="9" fill="#bbf7d0"/>
+  </g>
+</svg>

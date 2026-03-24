@@ -1,0 +1,189 @@
+{
+  "city": "Araçatuba-SP",
+  "sourceName": "Prefeitura de Araçatuba",
+  "sourceUrl": "https://aracatuba.sp.gov.br/sustentabilidade",
+  "consultedAt": "2026-03-24",
+  "consultedAtDisplay": "24 de março de 2026",
+  "materialsCatalog": [
+    {
+      "key": "entulho",
+      "label": "Entulho"
+    },
+    {
+      "key": "madeira",
+      "label": "Madeira"
+    },
+    {
+      "key": "plastico",
+      "label": "Plástico"
+    },
+    {
+      "key": "metal",
+      "label": "Metal"
+    },
+    {
+      "key": "vidro",
+      "label": "Vidro"
+    },
+    {
+      "key": "papel-papelao",
+      "label": "Papel e papelão"
+    },
+    {
+      "key": "moveis",
+      "label": "Móveis"
+    },
+    {
+      "key": "eletrodomesticos",
+      "label": "Eletrodomésticos"
+    },
+    {
+      "key": "lampadas",
+      "label": "Lâmpadas"
+    },
+    {
+      "key": "baterias-domesticas",
+      "label": "Baterias domésticas"
+    },
+    {
+      "key": "restos-verdes",
+      "label": "Capina, jardinagem e poda"
+    }
+  ],
+  "points": [
+    {
+      "id": "lago-azul",
+      "type": "ecoponto",
+      "name": "Ecoponto Lago Azul",
+      "address": "Cruzamento entre Av. Juscelino Kubitschek e Rua José Guerra.",
+      "materialKeys": [
+        "entulho",
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "moveis",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas",
+        "restos-verdes"
+      ],
+      "hours": "Todos os dias, 24h.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Av.+Juscelino+Kubitschek+e+Rua+Jos%C3%A9+Guerra.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.2369994,
+      "lon": -50.4579689
+    },
+    {
+      "id": "claudionor-cinti",
+      "type": "ecoponto",
+      "name": "Ecoponto Claudionor Cinti",
+      "address": "Cruzamento entre Av. Juscelino Kubitschek e Rua Adalberto da Cunha Capela.",
+      "materialKeys": [
+        "entulho",
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "moveis",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas",
+        "restos-verdes"
+      ],
+      "hours": "Todos os dias, 24h.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Av.+Juscelino+Kubitschek+e+Rua+Adalberto+da+Cunha+Capela.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.2302376,
+      "lon": -50.4713378
+    },
+    {
+      "id": "sao-jose",
+      "type": "ecoponto",
+      "name": "Ecoponto São José",
+      "address": "Cruzamento entre Rua Rafael Manarelli e Rua Deodato Izique.",
+      "materialKeys": [
+        "entulho",
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "moveis",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas",
+        "restos-verdes"
+      ],
+      "hours": "Todos os dias, 24h.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Rua+Rafael+Manarelli+e+Rua+Deodato+Izique.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.2001,
+      "lon": -50.474
+    },
+    {
+      "id": "country",
+      "type": "ecoponto",
+      "name": "Ecoponto Country",
+      "address": "Odorindo Perenha, 2220 (em frente antigo Country Clube).",
+      "materialKeys": [
+        "entulho",
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "moveis",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas",
+        "restos-verdes"
+      ],
+      "hours": "Todos os dias, 24h.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Odorindo+Perenha%2C+2220+%28em+frente+antigo+Country+Clube%29.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.2186112,
+      "lon": -50.4104048
+    },
+    {
+      "id": "fundadores",
+      "type": "ecoponto",
+      "name": "Ecoponto Fundadores",
+      "address": "Av. dos Fundadores, 4783 (final da avenida).",
+      "materialKeys": [
+        "entulho",
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "moveis",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas",
+        "restos-verdes"
+      ],
+      "hours": "Todos os dias, 24h.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Av.+dos+Fundadores%2C+4783+%28final+da+avenida%29.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.191059,
+      "lon": -50.4748018
+    },
+    {
+      "id": "pev-secretaria-meio-ambiente",
+      "type": "pev",
+      "name": "PEV da Secretaria Municipal de Meio Ambiente e Sustentabilidade",
+      "address": "Av. Doutor Alcides Fagundes Chagas, 222 – Bairro Aviação.",
+      "materialKeys": [
+        "madeira",
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "lampadas",
+        "baterias-domesticas"
+      ],
+      "hours": "Consulte o atendimento da Secretaria Municipal de Meio Ambiente e Sustentabilidade.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Av.+Doutor+Alcides+Fagundes+Chagas%2C+222+%E2%80%93+Bairro+Avia%C3%A7%C3%A3o.%2C+Ara%C3%A7atuba+-+SP",
+      "lat": -21.1981831,
+      "lon": -50.431116
+    }
+  ]
+}

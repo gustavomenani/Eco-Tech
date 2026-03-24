@@ -1,0 +1,141 @@
+{
+  "consultedAtDisplay": "24 de março de 2026",
+  "homeResourceIds": [
+    "oswaldo-cruz",
+    "perspectivas-fatece",
+    "momento-ambiental",
+    "tv-senado"
+  ],
+  "homeSpotlightIds": [
+    "oswaldo-cruz",
+    "perspectivas-fatece"
+  ],
+  "sourcesFeaturedIds": [
+    "oswaldo-cruz",
+    "perspectivas-fatece"
+  ],
+  "sourcesVideoIds": [
+    "momento-ambiental",
+    "tv-senado"
+  ],
+  "sourcePanels": [
+    {
+      "title": "Prefeitura de Araçatuba",
+      "description": "Fonte principal para os ecopontos, materiais aceitos e ponto de entrega voluntária da cidade.",
+      "url": "https://aracatuba.sp.gov.br/sustentabilidade",
+      "cta": "Abrir fonte"
+    },
+    {
+      "title": "Global E-waste Monitor 2024",
+      "description": "Fonte usada para a estatística mundial sobre a geração de lixo eletrônico.",
+      "url": "https://ewastemonitor.info/the-global-e-waste-monitor-2024/",
+      "cta": "Abrir fonte"
+    }
+  ],
+  "items": [
+    {
+      "id": "oswaldo-cruz",
+      "kind": "article",
+      "cta": "Ler artigo",
+      "url": "https://www.oswaldocruz.br/revista_academica/content/pdf/Edicao27_Inae_Castro.pdf",
+      "media": {
+        "src": "assets/resource-oswaldo.svg",
+        "alt": "Capa ilustrada do artigo da Revista Academica Oswaldo Cruz sobre lixo eletronico.",
+        "width": 800,
+        "height": 560,
+        "label": "PDF academico"
+      },
+      "home": {
+        "badge": "Artigo acadêmico",
+        "title": "Revista Acadêmica Oswaldo Cruz",
+        "kicker": "Impactos ambientais, componentes tóxicos e necessidade de logística reversa.",
+        "description": "Material usado para dar mais peso científico à explicação sobre contaminação, baixa destinação correta e responsabilidade compartilhada.",
+        "featured": true
+      },
+      "sources": {
+        "badge": "Artigo central",
+        "title": "O descarte do lixo eletrônico e seus impactos",
+        "kicker": "Revista Acadêmica Oswaldo Cruz",
+        "description": "Foi usado para aprofundar a parte científica do site, principalmente nos impactos ambientais, na presença de metais e substâncias tóxicas e na importância da logística reversa.",
+        "featured": true
+      }
+    },
+    {
+      "id": "perspectivas-fatece",
+      "kind": "article",
+      "cta": "Ler artigo",
+      "url": "https://fatece.edu.br/arquivos/arquivos-revistas/perspectiva/volume10/Paulo%20Sergio%20de%20Souza%20Filho;%20Priscila%20Ligabo%20Murarolli.pdf",
+      "media": {
+        "src": "assets/resource-perspectivas.svg",
+        "alt": "Capa ilustrada do artigo da revista Perspectivas em Ciencias Tecnologicas sobre triagem e reaproveitamento.",
+        "width": 800,
+        "height": 560,
+        "label": "Pesquisa aplicada"
+      },
+      "home": {
+        "badge": "Artigo acadêmico",
+        "title": "Perspectivas em Ciências Tecnológicas",
+        "kicker": "Triagem, manutenção, reuso e doação como soluções educativas e sociais.",
+        "description": "Esse estudo fortalece a parte prática do projeto mostrando que coleta sozinha não basta: é preciso reaproveitar e ensinar.",
+        "featured": true
+      },
+      "sources": {
+        "badge": "Artigo central",
+        "title": "Impactos do lixo eletrônico na sociedade e soluções educativas para a triagem",
+        "kicker": "Perspectivas em Ciências Tecnológicas",
+        "description": "Foi usado para fortalecer a parte de soluções, mostrando coleta, triagem, manutenção, reaproveitamento e doação como práticas educativas e sociais.",
+        "featured": true
+      }
+    },
+    {
+      "id": "momento-ambiental",
+      "kind": "video",
+      "cta": "Assistir vídeo",
+      "url": "https://www.youtube.com/watch?v=YIL4QRPkZU4",
+      "media": {
+        "src": "assets/resource-momento-ambiental.svg",
+        "alt": "Miniatura ilustrada do video Momento Ambiental sobre lixo eletronico.",
+        "width": 800,
+        "height": 560,
+        "label": "YouTube"
+      },
+      "home": {
+        "badge": "Vídeo",
+        "title": "Momento Ambiental",
+        "kicker": "Explicação introdutória em linguagem simples para reforçar a conscientização.",
+        "description": "Bom material para abrir a apresentação com uma explicação rápida, clara e fácil de entender."
+      },
+      "sources": {
+        "badge": "Vídeo em destaque",
+        "title": "Lixo Eletrônico - Momento Ambiental",
+        "kicker": "Canal Momento Ambiental",
+        "description": "Vídeo introdutório usado como apoio para explicar o problema do lixo eletrônico em linguagem simples, direta e fácil de apresentar."
+      }
+    },
+    {
+      "id": "tv-senado",
+      "kind": "video",
+      "cta": "Assistir vídeo",
+      "url": "https://www.youtube.com/watch?v=VyLFK7r-LAw",
+      "media": {
+        "src": "assets/resource-tv-senado.svg",
+        "alt": "Miniatura ilustrada do video da TV Senado sobre industria, descarte e habitos de consumo.",
+        "width": 800,
+        "height": 560,
+        "label": "Reportagem"
+      },
+      "home": {
+        "badge": "Vídeo",
+        "title": "TV Senado",
+        "kicker": "Mostra que a solução depende da indústria, da política pública e dos hábitos de consumo.",
+        "description": "Ajuda a conectar o problema do lixo eletrônico com legislação, indústria e responsabilidade coletiva."
+      },
+      "sources": {
+        "badge": "Vídeo em destaque",
+        "title": "Solução para lixo eletrônico exige mudanças na indústria e nos hábitos de consumo",
+        "kicker": "TV Senado",
+        "description": "Reportagem usada para mostrar que a solução não depende apenas do consumidor, mas também de indústria, legislação e política pública."
+      }
+    }
+  ]
+}

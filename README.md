@@ -2,6 +2,26 @@
 
 Site estático escolar sobre lixo eletrônico, descarte correto e ecopontos em Araçatuba-SP.
 
+## Estrutura do projeto
+
+```text
+src/
+  assets/     arquivos visuais
+  data/       dados e fontes estruturadas
+  pages/      páginas-fonte do site
+  site.js     comportamento global
+  styles.css  estilos globais
+
+scripts/
+  build_site.py       gera o site final em dist/
+  check_site.py       valida HTML, CSS, JSON-LD e dados
+  update_ecopoints.py atualiza a base local a partir da fonte oficial
+  generate_icons.py   recria os icones PWA
+
+dist/
+  saída pronta para publicação
+```
+
 ## Como rodar localmente
 
 No Windows, dentro da pasta do projeto:
@@ -16,56 +36,101 @@ Para trocar a porta:
 .\localhost.cmd 5501
 ```
 
-O script sincroniza a estrutura do site antes de iniciar o servidor local.
+O script gera a pasta `dist/` antes de iniciar o servidor local.
 
 ## Como editar o conteúdo
 
-Arquivos principais:
+Edite apenas os arquivos em `src/`:
 
-- `index.html`, `sobre.html`, `solucoes.html`, `projeto.html`, `aracatuba.html`, `contato-ou-fontes.html`
-- `styles.css`
-- `site.js`
+- `src/pages/*.html`: estrutura e conteúdo das páginas
+- `src/styles.css`: estilos do site
+- `src/site.js`: comportamento global e filtros do mapa
+- `src/site.config.json`: navegação, SEO, manifest e dados globais
+- `src/data/ecopontos-aracatuba.json`: base única dos ecopontos e catálogo de materiais
+- `src/data/ecopoints-geo.json`: coordenadas e aliases usados para atualizar a base oficial sem perder os IDs
+- `src/data/resources.json`: base única dos artigos, vídeos e fontes em destaque
 
-Arquivos de dados e configuração:
+## Build
 
-- `data/ecopontos-aracatuba.json`: lista dos ecopontos
-- `site.config.json`: URL do site, navegação, SEO e conteúdo compartilhado
-
-## Sincronização
-
-Antes de publicar, rode:
+Para gerar manualmente a versão publicada:
 
 ```powershell
-python scripts\sync_site.py
+py scripts\build_site.py
 ```
 
 Esse script:
 
-- atualiza o cabeçalho compartilhado
-- atualiza o rodapé compartilhado
-- atualiza os metadados de SEO das páginas
-- insere os cartões de ecopontos na página de Araçatuba
-- embute os dados dos ecopontos no HTML para funcionar até sem localhost
+- limpa e recria `dist/`
+- injeta cabeçalho e rodapé compartilhados
+- gera SEO e JSON-LD de cada página
+- monta os cartões de ecopontos a partir da base de dados
+- gera `site.webmanifest`
 - gera `robots.txt`
 - gera `sitemap.xml`
 - gera `.nojekyll`
+- valida referências locais na saída final
+
+Para rodar as checagens extras de HTML, CSS e acessibilidade básica:
+
+```powershell
+py scripts\check_site.py
+```
+
+Esse script também valida:
+
+- estrutura dos arquivos JSON em `src/data/`
+- consistência entre navegação, páginas e assets
+- coerência da base `src/data/ecopoints-geo.json`
+- presença dos ícones declarados no manifest
+- presença de dimensões nas imagens geradas
+
+## Atualização dos ecopontos
+
+Quando a Prefeitura de Araçatuba atualizar os ecopontos, rode:
+
+```powershell
+py scripts\update_ecopoints.py
+```
+
+Depois disso, regenere a saída:
+
+```powershell
+py scripts\build_site.py
+py scripts\check_site.py
+```
+
+O arquivo `src/data/ecopoints-geo.json` mantém os IDs, aliases e coordenadas usadas para casar os pontos da fonte oficial com a base do site.
+
+## Qualidade visual
+
+O repositório também tem uma esteira de qualidade em `.github/workflows/site-quality.yml` que:
+
+- gera o build final
+- roda `check_site.py`
+- executa Lighthouse na home e na página de ecopontos
+- captura screenshots desktop e mobile com Playwright
+
+Se quiser rodar essa parte localmente:
+
+```powershell
+npm.cmd install
+npx playwright install chromium
+```
 
 ## Publicação
 
-O projeto está preparado para publicação como site estático no GitHub Pages.
+O projeto agora está preparado para deploy direto no Vercel.
 
-Se a URL final mudar:
+O arquivo `vercel.json` já define:
 
-1. atualize `site.config.json`
-2. rode `python scripts\sync_site.py`
-3. publique novamente
+- comando de build
+- diretório final `dist/`
+- headers básicos de cache e segurança
 
-## GitHub Pages
+No Vercel, basta importar o repositório. As URLs canônicas e o sitemap usam automaticamente `VERCEL_PROJECT_PRODUCTION_URL` ou `SITE_URL` quando esses valores estiverem disponíveis no ambiente.
 
-O workflow de publicação está em `.github/workflows/pages.yml`.
+## Observações
 
-Ele:
-
-- roda a sincronização do site
-- publica automaticamente no GitHub Pages em pushes para `main`
-- também pode ser executado manualmente
+- `dist/` é saída gerada e não deve ser usado como fonte de edição
+- os cartões de ecopontos e os blocos de fontes em destaque são gerados a partir dos arquivos em `src/data/`
+- o GitHub Actions agora faz checagens de qualidade; o deploy fica por conta do Vercel
