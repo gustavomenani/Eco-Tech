@@ -9,7 +9,7 @@ type ResourceGridProps = {
 
 export function ResourceGrid({ resources, context, dense = false }: ResourceGridProps) {
   return (
-    <div className={`grid gap-6 ${dense ? "md:grid-cols-2" : "lg:grid-cols-2 xl:grid-cols-4"}`}>
+    <div className={`grid gap-4 md:gap-6 ${dense ? "md:grid-cols-2" : "lg:grid-cols-2 xl:grid-cols-4"}`}>
       {resources.map((resource) => {
         const content = resource[context];
 
@@ -26,19 +26,19 @@ export function ResourceGrid({ resources, context, dense = false }: ResourceGrid
                 height={resource.media.height}
                 className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
               />
-              <span className="absolute left-4 top-4 rounded-full bg-slate-950/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+              <span className="absolute left-3 top-3 rounded-full bg-slate-950/85 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white md:left-4 md:top-4 md:text-xs md:tracking-[0.18em]">
                 {resource.media.label}
               </span>
             </div>
 
-            <div className="flex flex-1 flex-col gap-4 p-6">
-              <div className="space-y-3">
+            <div className="flex flex-1 flex-col gap-4 p-5 md:p-6">
+              <div className="space-y-2.5 md:space-y-3">
                 <span className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
                   {content.badge}
                 </span>
-                <h3 className="font-display text-2xl font-semibold leading-tight text-slate-950">{content.title}</h3>
-                <p className="text-sm font-semibold text-sky-700">{content.kicker}</p>
-                {content.description ? <p className="text-sm leading-7 text-slate-600">{content.description}</p> : null}
+                <h3 className="font-display text-xl font-semibold leading-[1.08] text-balance text-slate-950 md:text-2xl md:leading-tight">{content.title}</h3>
+                <p className="text-sm font-semibold leading-6 text-sky-700">{content.kicker}</p>
+                {content.description ? <p className="text-sm leading-7 text-pretty text-slate-600">{content.description}</p> : null}
               </div>
 
               <div className="mt-auto">
@@ -46,7 +46,7 @@ export function ResourceGrid({ resources, context, dense = false }: ResourceGrid
                   href={resource.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button-secondary inline-flex"
+                  className="button-secondary inline-flex w-full sm:w-auto"
                 >
                   {resource.cta}
                 </a>

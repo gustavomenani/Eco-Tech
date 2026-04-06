@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import { MobileFloatingCta } from "@/components/common/mobile-floating-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { getSiteConfig } from "@/lib/data";
@@ -53,9 +54,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </a>
         <div className="pb-10">
           <SiteHeader brand={config.siteName} nav={config.nav} />
-          <main id="main-content" className="space-y-12 pb-16 pt-3 md:space-y-16">
+          <main id="main-content" className="space-y-10 pb-14 pt-2 md:space-y-16 md:pb-16 md:pt-3">
             {children}
           </main>
+          <MobileFloatingCta />
           <SiteFooter
             brand={config.siteName}
             description={config.footerDescription}

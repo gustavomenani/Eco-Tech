@@ -9,6 +9,14 @@ type SiteFooterProps = {
 };
 
 export function SiteFooter({ brand, description, note, nav }: SiteFooterProps) {
+  const footerCtaByHref: Record<string, string> = {
+    "/sobre": "Conheca a iniciativa",
+    "/solucoes": "Como descartar melhor",
+    "/projeto": "Ver o projeto completo",
+    "/ecopontos": "Encontrar ecopontos",
+    "/fontes": "Abrir fontes e referencias"
+  };
+
   return (
     <footer className="px-4 pb-8 md:px-6">
       <div className="shell">
@@ -24,9 +32,10 @@ export function SiteFooter({ brand, description, note, nav }: SiteFooterProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-label={footerCtaByHref[item.href] ?? `Abrir ${item.label.toLowerCase()} pelo rodape`}
                 className="rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700"
               >
-                {item.label}
+                {footerCtaByHref[item.href] ?? item.label}
               </Link>
             ))}
           </nav>

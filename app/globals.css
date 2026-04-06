@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
     linear-gradient(180deg, #ffffff 0%, #f4f8f5 100%);
   color: #0f172a;
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 a,
@@ -32,6 +34,8 @@ button,
 input,
 select {
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -102,6 +106,7 @@ select {
   padding: 0.9rem 1.35rem;
   font-size: 0.95rem;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .button-primary {
@@ -143,4 +148,12 @@ select {
     linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+.chip-scroll {
+  scrollbar-width: none;
+}
+
+.chip-scroll::-webkit-scrollbar {
+  display: none;
 }

@@ -9,19 +9,19 @@
     </linearGradient>
   </defs>
   <rect width="800" height="560" rx="32" fill="url(#bg)"/>
-  <rect x="58" y="58" width="684" height="444" rx="30" fill="rgba(15,23,42,0.22)" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="58" y="58" width="684" height="444" rx="30" fill="#0f172a" opacity="0.22" stroke="#ffffff" stroke-opacity="0.22"/>
   <rect x="96" y="100" width="142" height="36" rx="18" fill="#dbeafe"/>
   <text x="167" y="124" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">Reportagem</text>
-  <text x="96" y="192" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">Industria,</text>
-  <text x="96" y="252" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff">politica e consumo</text>
+  <text x="96" y="188" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800" fill="#ffffff">Industria,</text>
+  <text x="96" y="242" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800" fill="#ffffff">politica e consumo</text>
   <text x="96" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#e0f2fe">o problema vai alem do descarte</text>
   <text x="96" y="352" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#e0f2fe">e envolve habitos e sistema produtivo</text>
-  <g transform="translate(528 154)">
-    <rect width="168" height="242" rx="26" fill="#ffffff" opacity="0.96"/>
-    <rect x="30" y="34" width="108" height="64" rx="18" fill="#dbeafe"/>
-    <path d="M56 66h56M56 86h34" fill="none" stroke="#1d4ed8" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="84" cy="158" r="40" fill="#bfdbfe"/>
-    <path d="M84 132v52M58 158h52" fill="none" stroke="#1e40af" stroke-width="12" stroke-linecap="round"/>
-    <rect x="42" y="212" width="84" height="14" rx="7" fill="#38bdf8"/>
+  <g transform="translate(566 164)">
+    <rect width="138" height="214" rx="24" fill="#ffffff" opacity="0.96"/>
+    <rect x="24" y="30" width="90" height="54" rx="16" fill="#dbeafe"/>
+    <path d="M46 58h46M46 76h28" fill="none" stroke="#1d4ed8" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="70" cy="138" r="34" fill="#bfdbfe"/>
+    <path d="M70 116v44M48 138h44" fill="none" stroke="#1e40af" stroke-width="10" stroke-linecap="round"/>
+    <rect x="34" y="186" width="72" height="12" rx="6" fill="#38bdf8"/>
   </g>
 </svg>
