@@ -98,7 +98,7 @@ export function SiteHeader({ brand, nav }: SiteHeaderProps) {
 
           <nav
             id="site-menu"
-            className={`absolute right-0 top-[calc(100%+0.85rem)] z-50 flex w-[min(100vw-1.5rem,21rem)] origin-top-right flex-col gap-2 rounded-[28px] border border-white/75 bg-white/96 p-3 shadow-[0_26px_70px_rgba(15,23,42,0.18)] backdrop-blur-xl transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:static md:top-auto md:w-auto md:origin-center md:flex-row md:items-center md:gap-2 md:border-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0 md:transition-none ${
+            className={`absolute right-0 top-[calc(100%+0.55rem)] z-50 flex w-[min(76vw,13.75rem)] origin-top-right flex-col gap-1 rounded-[24px] border border-white/80 bg-white/97 p-2.5 shadow-[0_22px_55px_rgba(15,23,42,0.16)] backdrop-blur-xl transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:static md:top-auto md:w-auto md:origin-center md:flex-row md:items-center md:gap-2 md:border-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0 md:transition-none ${
               open
                 ? "visible translate-y-0 scale-100 opacity-100 pointer-events-auto"
                 : "invisible -translate-y-2 scale-[0.98] opacity-0 pointer-events-none md:visible md:translate-y-0 md:scale-100 md:opacity-100 md:pointer-events-auto"
@@ -112,7 +112,7 @@ export function SiteHeader({ brand, nav }: SiteHeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-[20px] px-4 py-3 text-sm font-semibold transition hover:bg-emerald-50 hover:text-emerald-700 md:rounded-full md:py-2 ${
+                  className={`rounded-[18px] px-3.5 py-2.5 text-sm font-semibold transition hover:bg-emerald-50 hover:text-emerald-700 md:rounded-full md:px-4 md:py-2 ${
                     isActive ? "bg-emerald-100 text-emerald-700 shadow-[inset_0_0_0_1px_rgba(16,185,129,0.12)]" : "text-slate-700"
                   }`}
                   aria-current={isActive ? "page" : undefined}
