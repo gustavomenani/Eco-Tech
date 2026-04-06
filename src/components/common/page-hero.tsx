@@ -24,7 +24,7 @@ export function PageHero({
   return (
     <section className="px-3 pt-3 md:px-6 md:pt-6">
       <div className="shell">
-        <div className="hero-panel grid items-center gap-8 overflow-hidden px-5 py-6 md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:px-10 md:py-12">
+        <div className="hero-panel motion-rise grid items-center gap-8 overflow-hidden px-5 py-6 md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:px-10 md:py-12">
           <div className="space-y-5 md:space-y-6">
             <div className="eyebrow">{eyebrow}</div>
             <div className="space-y-3 md:space-y-4">
@@ -36,7 +36,7 @@ export function PageHero({
             {actions ? <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap [&>*]:w-full sm:[&>*]:w-auto">{actions}</div> : null}
           </div>
 
-          <div className="relative">
+          <div className="hero-visual relative">
             <div className="absolute inset-0 -translate-x-4 translate-y-4 rounded-[36px] bg-emerald-200/45 blur-3xl" />
             <div className="relative rounded-[28px] border border-white/70 bg-white/70 p-3 shadow-2xl md:rounded-[36px] md:p-4">
               <Image

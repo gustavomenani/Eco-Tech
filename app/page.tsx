@@ -37,7 +37,7 @@ export default function HomePage() {
       />
 
       <section className="px-4 md:px-6">
-        <div className="shell grid gap-4 md:grid-cols-3">
+        <div className="shell stagger-grid grid gap-4 md:grid-cols-3">
           {homeMetrics.map((item) => (
             <article key={item.title} className="card-surface p-6">
               <h2 className="font-display text-2xl font-semibold text-slate-950">{item.title}</h2>
@@ -56,7 +56,7 @@ export default function HomePage() {
               description="Cada rota concentra uma parte do EcoTech com leitura objetiva para alunos, professores e visitantes que acessarem o QR code."
             />
 
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div className="stagger-grid grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {homeSections.map((item) => (
                 <article key={item.title} className="card-surface p-5">
                   <h3 className="font-display text-2xl font-semibold text-slate-950">{item.title}</h3>
@@ -80,7 +80,7 @@ export default function HomePage() {
               description="Por isso, a conscientização precisa ser simples, visual e prática. O projeto combina estatística, orientação local e linguagem acessível."
             />
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="stagger-grid grid gap-4 md:grid-cols-3">
               {homeStats.map((item) => (
                 <article key={item.value} className="rounded-[28px] bg-slate-950 px-5 py-6 text-white shadow-xl">
                   <strong className="font-display text-4xl font-semibold">{item.value}</strong>
@@ -101,7 +101,7 @@ export default function HomePage() {
               description="A ideia do EcoTech é transformar um tema técnico em uma ação simples, prática e replicável na rotina."
             />
 
-            <div className="grid gap-4 lg:grid-cols-3">
+            <div className="stagger-grid grid gap-4 lg:grid-cols-3">
               {homeSteps.map((item, index) => (
                 <article key={item.title} className="card-surface p-6">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-lg font-bold text-white">
@@ -113,7 +113,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="card-surface flex flex-col gap-4 p-6 md:flex-row md:items-center md:justify-between">
+            <div className="card-surface motion-rise flex flex-col gap-4 p-6 md:flex-row md:items-center md:justify-between">
               <div className="space-y-2">
                 <strong className="font-display text-2xl font-semibold text-slate-950">
                   Quer transformar isso em ação agora?

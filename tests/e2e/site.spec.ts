@@ -4,8 +4,18 @@ test("navigates through the main pages", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("EcoTech");
 
+  const menuButton = page.getByRole("button", { name: /menu principal/i });
+
+  if (await menuButton.isVisible().catch(() => false)) {
+    await menuButton.click();
+  }
+
   await page.getByRole("banner").getByRole("link", { name: "Sobre" }).click();
   await expect(page).toHaveURL(/\/sobre$/);
+
+  if (await menuButton.isVisible().catch(() => false)) {
+    await menuButton.click();
+  }
 
   await page.getByRole("banner").getByRole("link", { name: "Soluções" }).click();
   await expect(page).toHaveURL(/\/solucoes$/);

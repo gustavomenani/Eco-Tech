@@ -53,7 +53,7 @@ function EcopointMap({
         onSelect={onSelect}
       />
 
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="stagger-grid grid gap-3 lg:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
         {points.map((point, index) => {
           const isActive = index === activeIndex;
 
@@ -61,16 +61,16 @@ function EcopointMap({
             <button
               key={point.id}
               type="button"
-              className={`rounded-[24px] border px-4 py-4 text-left shadow-[0_16px_36px_rgba(15,23,42,0.05)] transition md:rounded-[28px] md:px-5 md:py-5 ${
+              className={`group min-h-[176px] rounded-[24px] border px-4 py-4 text-left shadow-[0_16px_36px_rgba(15,23,42,0.05)] transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:rounded-[28px] md:px-5 md:py-5 ${
                 isActive
-                  ? "border-emerald-300 bg-[linear-gradient(180deg,rgba(240,253,244,0.95),rgba(255,255,255,0.98))] ring-1 ring-emerald-200/70"
-                  : "border-slate-200/90 bg-white hover:border-slate-300 hover:bg-slate-50/80"
+                  ? "border-emerald-300 bg-[linear-gradient(180deg,rgba(240,253,244,0.95),rgba(255,255,255,0.98))] shadow-[0_20px_48px_rgba(16,185,129,0.12)] ring-1 ring-emerald-200/70"
+                  : "border-slate-200/90 bg-white hover:-translate-y-1 hover:border-slate-300 hover:bg-slate-50/80 hover:shadow-[0_20px_48px_rgba(15,23,42,0.09)]"
               }`}
               onClick={() => onSelect(index)}
             >
               <div className="grid grid-cols-[2.75rem_1fr] items-start gap-3 md:grid-cols-[3rem_1fr] md:gap-4">
                 <span
-                  className={`inline-flex h-12 w-10 items-center justify-center rounded-[16px] text-base font-extrabold tracking-tight shadow-sm md:h-14 md:w-11 md:rounded-[18px] md:text-lg ${
+                  className={`inline-flex h-12 w-10 items-center justify-center rounded-[16px] text-base font-extrabold tracking-tight shadow-sm transition-transform duration-300 group-hover:scale-[1.04] md:h-14 md:w-11 md:rounded-[18px] md:text-lg ${
                     isActive
                       ? "bg-gradient-to-b from-emerald-600 to-emerald-700 text-white"
                       : "bg-slate-900 text-white"
@@ -79,13 +79,15 @@ function EcopointMap({
                   {index + 1}
                 </span>
                 <div className="space-y-2">
-                  <p className="font-display text-xl font-semibold leading-[1.12] text-balance text-slate-950 md:text-2xl md:leading-[1.15]">
+                  <p className="font-display text-[1.55rem] font-semibold leading-[0.98] text-balance text-slate-950 md:text-[1.85rem] md:leading-[1.02]">
                     <span className="mb-1 block text-[0.65rem] font-bold uppercase tracking-[0.2em] text-slate-500 md:text-[0.7rem]">
                       Ponto {index + 1}
                     </span>
                     <span>{getMapCardTitle(point)}</span>
                   </p>
-                  <p className="text-base leading-7 text-pretty text-slate-600 md:text-[1.08rem] md:leading-8">{point.address}</p>
+                  <p className="max-w-[26ch] text-[0.98rem] leading-7 text-slate-600 md:max-w-none md:text-[1.02rem] md:leading-7">
+                    {point.address}
+                  </p>
                 </div>
               </div>
             </button>
@@ -204,7 +206,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
 
   return (
     <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-      <div className="section-panel min-w-0 space-y-5 px-4 py-4 md:space-y-6 md:px-6 md:py-5">
+      <div className="section-panel motion-rise min-w-0 space-y-5 px-4 py-4 md:space-y-6 md:px-6 md:py-5">
         <div className="md:hidden">
           <button
             type="button"
@@ -310,7 +312,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
       </div>
 
       <aside className="min-w-0 space-y-5 xl:row-span-2">
-        <div className="section-panel space-y-3 px-5 py-5 md:px-6">
+        <div className="section-panel motion-rise space-y-3 px-5 py-5 md:px-6">
           <p className="section-label">Mapa interativo</p>
           <h3 className="font-display text-[1.8rem] font-semibold leading-[1.05] text-balance text-slate-950 md:text-3xl">Mapa real com reserva esquemática</h3>
           <p className="text-sm leading-7 text-pretty text-slate-600">
@@ -332,7 +334,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
         />
       </aside>
 
-      <div className="min-w-0 grid gap-4 xl:col-start-1">
+      <div className="stagger-grid min-w-0 grid gap-4 xl:col-start-1">
         {filteredPoints.map((point) => {
           const labels = point.materialKeys.map((key) => materialLookup.get(key) || key);
 
