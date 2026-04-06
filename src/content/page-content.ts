@@ -230,7 +230,7 @@ export const fontesProjectInfo = [
     label: "Criação do site",
     value: "Gustavo Menani, com contribuição de todos os integrantes do grupo."
   },
-  { label: "Integrantes", value: "Menani, Pedro, Luigi, Leon, Fernando" },
+  { label: "Integrantes", value: "Menani, Pedro, Luigi, Fernando" },
   { label: "Turma", value: "2º ano de Matemática" },
   { label: "Escola", value: "ETEC Araçatuba" },
   { label: "Tema", value: "Conscientização sobre lixo eletrônico" }
