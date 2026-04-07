@@ -2,7 +2,7 @@
   "name": "ecotech-v2",
   "private": true,
   "engines": {
-    "node": ">=20.18"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
