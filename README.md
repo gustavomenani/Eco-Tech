@@ -90,3 +90,5 @@ O script consulta a fonte oficial, reconstrui `src/data/ecopontos-aracatuba.json
 ## Deploy no Vercel
 
 O projeto foi preparado para deploy direto no Vercel sem depender de Python. Basta importar o repositorio. As URLs canonicas usam automaticamente `SITE_URL`, `VERCEL_PROJECT_PRODUCTION_URL` ou `VERCEL_URL` quando esses valores estiverem disponiveis.
+
+O fallback versionado usa `https://eco-tech-jade.vercel.app/`. Se o site for publicado em outro dominio ou ambiente, defina `SITE_URL`.

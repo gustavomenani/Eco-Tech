@@ -2,10 +2,11 @@ import Link from "next/link";
 import { JsonLd } from "@/components/common/json-ld";
 import { PageHero } from "@/components/common/page-hero";
 import { SectionHeading } from "@/components/common/section-heading";
+import { SiteQrPanel } from "@/components/common/site-qr-panel";
 import { ResourceGrid } from "@/components/resources/resource-grid";
 import { homeMetrics, homeSections, homeStats, homeSteps } from "@/content/page-content";
 import { getResourcesByIds, getResourcesDocument } from "@/lib/data";
-import { buildPageJsonLd, buildPageMetadata } from "@/lib/site";
+import { buildPageJsonLd, buildPageMetadata, resolveSiteUrl } from "@/lib/site";
 
 export const metadata = buildPageMetadata("/");
 
@@ -13,6 +14,7 @@ export default function HomePage() {
   const resources = getResourcesDocument();
   const spotlightResources = getResourcesByIds(resources.homeSpotlightIds);
   const featuredResources = getResourcesByIds(resources.homeResourceIds);
+  const fallbackSiteUrl = resolveSiteUrl().toString();
 
   return (
     <>
@@ -35,6 +37,8 @@ export default function HomePage() {
           </>
         }
       />
+
+      <SiteQrPanel fallbackUrl={fallbackSiteUrl} />
 
       <section className="px-4 md:px-6">
         <div className="shell stagger-grid grid gap-4 md:grid-cols-3">

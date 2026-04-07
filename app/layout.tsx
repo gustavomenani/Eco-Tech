@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { MobileFloatingCta } from "@/components/common/mobile-floating-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             nav={config.nav}
           />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
