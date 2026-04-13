@@ -1,5 +1,5 @@
 {
-  "consultedAtDisplay": "24 de março de 2026",
+  "consultedAtDisplay": "12 de abril de 2026",
   "homeResourceIds": [
     "oswaldo-cruz",
     "perspectivas-fatece",
@@ -21,13 +21,13 @@
   "sourcePanels": [
     {
       "title": "Prefeitura de Araçatuba",
-      "description": "Fonte principal para os ecopontos, materiais aceitos e ponto de entrega voluntária da cidade.",
+      "description": "Fonte principal para a identificação dos ecopontos municipais, dos materiais aceitos e do ponto de entrega voluntária do município.",
       "url": "https://aracatuba.sp.gov.br/sustentabilidade",
       "cta": "Abrir fonte"
     },
     {
       "title": "Global E-waste Monitor 2024",
-      "description": "Fonte usada para a estatística mundial sobre a geração de lixo eletrônico.",
+      "description": "Relatório internacional utilizado para embasar os dados globais sobre geração e destinação de lixo eletrônico.",
       "url": "https://ewastemonitor.info/the-global-e-waste-monitor-2024/",
       "cta": "Abrir fonte"
     }
@@ -40,10 +40,10 @@
       "url": "https://www.oswaldocruz.br/revista_academica/content/pdf/Edicao27_Inae_Castro.pdf",
       "media": {
         "src": "assets/resource-oswaldo.svg",
-        "alt": "Capa ilustrada do artigo da Revista Academica Oswaldo Cruz sobre lixo eletronico.",
+        "alt": "Capa ilustrada do artigo da Revista Acadêmica Oswaldo Cruz sobre lixo eletrônico.",
         "width": 800,
         "height": 560,
-        "label": "PDF academico"
+        "label": "PDF acadêmico"
       },
       "home": {
         "badge": "Artigo acadêmico",
@@ -67,7 +67,7 @@
       "url": "https://fatece.edu.br/arquivos/arquivos-revistas/perspectiva/volume10/Paulo%20Sergio%20de%20Souza%20Filho;%20Priscila%20Ligabo%20Murarolli.pdf",
       "media": {
         "src": "assets/resource-perspectivas.svg",
-        "alt": "Capa ilustrada do artigo da revista Perspectivas em Ciencias Tecnologicas sobre triagem e reaproveitamento.",
+        "alt": "Capa ilustrada do artigo da revista Perspectivas em Ciências Tecnológicas sobre triagem e reaproveitamento.",
         "width": 800,
         "height": 560,
         "label": "Pesquisa aplicada"
@@ -94,7 +94,7 @@
       "url": "https://www.youtube.com/watch?v=YIL4QRPkZU4",
       "media": {
         "src": "assets/resource-momento-ambiental.svg",
-        "alt": "Miniatura ilustrada do video Momento Ambiental sobre lixo eletronico.",
+        "alt": "Miniatura ilustrada do vídeo Momento Ambiental sobre lixo eletrônico.",
         "width": 800,
         "height": 560,
         "label": "YouTube"
@@ -103,7 +103,7 @@
         "badge": "Vídeo",
         "title": "Momento Ambiental",
         "kicker": "Explicação introdutória em linguagem simples para reforçar a conscientização.",
-        "description": "Bom material para abrir a apresentação com uma explicação rápida, clara e fácil de entender."
+        "description": "Material adequado para introduzir a apresentação com uma explicação objetiva, clara e acessível."
       },
       "sources": {
         "badge": "Vídeo em destaque",
@@ -119,7 +119,7 @@
       "url": "https://www.youtube.com/watch?v=VyLFK7r-LAw",
       "media": {
         "src": "assets/resource-tv-senado.svg",
-        "alt": "Miniatura ilustrada do video da TV Senado sobre industria, descarte e habitos de consumo.",
+        "alt": "Miniatura ilustrada do vídeo da TV Senado sobre indústria, descarte e hábitos de consumo.",
         "width": 800,
         "height": 560,
         "label": "Reportagem"

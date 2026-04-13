@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: "EcoTech",
     template: "%s"
   },
-  description: "Projeto escolar sobre lixo eletrônico, descarte correto e ecopontos em Araçatuba-SP.",
+  description: "Projeto escolar sobre lixo eletrônico, descarte correto e ecopontos em Araçatuba e região.",
   applicationName: "EcoTech",
   authors: [{ name: getSiteConfig().author }],
   icons: {

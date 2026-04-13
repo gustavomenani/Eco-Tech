@@ -35,7 +35,7 @@ export default function FontesPage() {
       <PageHero
         eyebrow="Conclusão do projeto"
         title="EcoTech: informação, prática e conscientização ambiental."
-        description="Esta página reúne a mensagem final do projeto, a identificação do grupo e as fontes usadas na pesquisa, incluindo artigos acadêmicos e vídeos de apoio."
+        description="Esta página reúne a síntese final do projeto, a identificação do grupo e as fontes utilizadas na pesquisa, incluindo artigos acadêmicos, relatórios e vídeos de apoio."
         imageSrc="/assets/eco-cycle.svg"
         imageAlt="Ilustração sobre pesquisa, organização de dados e sustentabilidade"
       />
@@ -45,8 +45,8 @@ export default function FontesPage() {
           <div className="hero-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Conclusão"
-              title="O descarte correto de lixo eletrônico depende de informação e atitude."
-              description="O EcoTech mostra que pequenas ações podem ajudar a proteger a natureza, evitar poluição e orientar a comunidade escolar."
+              title="O descarte correto de lixo eletrônico depende de informação, organização e atitude."
+              description="O EcoTech mostra que ações simples, quando bem orientadas, contribuem para proteger o meio ambiente, evitar poluição e orientar a comunidade escolar."
             />
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -76,7 +76,7 @@ export default function FontesPage() {
             <SectionHeading
               label="Fontes usadas"
               title="As informações foram organizadas a partir de fontes públicas, acadêmicas e audiovisuais."
-              description="As fontes reforçam a credibilidade do trabalho e ajudam a conectar estatísticas, legislação, educação ambiental e exemplos práticos."
+              description="As referências reforçam a credibilidade do trabalho e ajudam a conectar estatísticas, política pública, educação ambiental e exemplos práticos."
             />
 
             <ResourceGrid resources={featuredResources} context="sources" dense />
@@ -102,11 +102,11 @@ export default function FontesPage() {
               <div className="space-y-3">
                 <p className="section-label">Vídeos de apoio</p>
                 <h3 className="font-display text-3xl font-semibold text-slate-950">
-                  Os vídeos complementam a leitura com linguagem mais direta e acessível.
+                  Os vídeos complementam a leitura com linguagem direta e apoio de apresentação.
                 </h3>
                 <p className="text-sm leading-7 text-slate-600">
                   Além dos artigos e relatórios, o projeto também indica materiais em vídeo para ampliar a compreensão
-                  do tema.
+                  do tema e facilitar a exposição em sala.
                 </p>
               </div>
 

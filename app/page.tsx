@@ -25,7 +25,7 @@ export default function HomePage() {
       <PageHero
         eyebrow="Projeto escolar de conscientização ambiental"
         title="EcoTech: tecnologia consciente também cuida do planeta."
-        description="O projeto EcoTech explica o que é lixo eletrônico, por que ele é um problema e como a população pode agir. O novo site organiza o conteúdo para leitura rápida no celular e apresentação mais forte na escola."
+        description="O projeto EcoTech explica o que é lixo eletrônico, por que ele representa um problema ambiental e como a população pode agir. O site organiza o conteúdo para leitura rápida no celular e para uma apresentação mais consistente no contexto escolar."
         imageSrc="/assets/hero-ewaste.svg"
         imageAlt="Ilustração sobre reciclagem de eletrônicos, tecnologia e meio ambiente"
         actions={
@@ -58,8 +58,8 @@ export default function HomePage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Navegação do projeto"
-              title="O conteúdo foi dividido em páginas para ficar claro, rápido e fácil de apresentar."
-              description="Cada rota concentra uma parte do EcoTech com leitura objetiva para alunos, professores e visitantes que acessarem o QR code."
+              title="O conteúdo foi organizado em páginas para tornar a navegação clara, objetiva e funcional."
+              description="Cada rota concentra uma parte do EcoTech com leitura direta para alunos, professores e visitantes que acessarem o QR code."
             />
 
             <div className="stagger-grid grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -83,7 +83,7 @@ export default function HomePage() {
             <SectionHeading
               label="Destaque visual"
               title="O lixo eletrônico é um problema real e crescente."
-              description="Por isso, a conscientização precisa ser simples, visual e prática. O projeto combina estatística, orientação local e linguagem acessível."
+              description="Por isso, a conscientização precisa ser clara, visual e aplicável. O projeto combina estatística, orientação local e linguagem acessível."
             />
 
             <div className="stagger-grid grid gap-4 md:grid-cols-3">
@@ -103,8 +103,8 @@ export default function HomePage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Como descartar"
-              title="Em três passos, qualquer pessoa já consegue descartar melhor."
-              description="A ideia do EcoTech é transformar um tema técnico em uma ação simples, prática e replicável na rotina."
+              title="Em três passos, qualquer pessoa já consegue descartar de forma mais adequada."
+              description="A proposta do EcoTech é transformar um tema técnico em uma ação simples, prática e aplicável à rotina."
             />
 
             <div className="stagger-grid grid gap-4 lg:grid-cols-3">
@@ -125,7 +125,7 @@ export default function HomePage() {
                   Quer transformar isso em ação agora?
                 </strong>
                 <p className="text-sm leading-7 text-slate-600">
-                  Abra a página de ecopontos, filtre pelo material e veja qual ponto faz mais sentido para o seu
+                  Abra a página de ecopontos, filtre pelo material e identifique o ponto mais adequado para o seu
                   descarte.
                 </p>
               </div>
@@ -142,15 +142,15 @@ export default function HomePage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Materiais em destaque"
-              title="Os artigos e vídeos fazem parte central da apresentação do projeto."
-              description="Eles sustentam o trabalho com base acadêmica, exemplos reais e linguagem acessível para explicar o tema em sala."
+              title="Os artigos e vídeos compõem a base de referência da apresentação do projeto."
+              description="Esses materiais sustentam o trabalho com base acadêmica, exemplos reais e linguagem acessível para explicar o tema em sala."
             />
 
             <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
               <article className="hero-panel space-y-6 px-6 py-6">
                 <div className="eyebrow">Leitura principal</div>
                 <h3 className="font-display text-3xl font-semibold text-slate-950">
-                  Comece pelos artigos que dão peso científico ao projeto.
+                  Comece pelos artigos que oferecem maior sustentação acadêmica ao projeto.
                 </h3>
                 <p className="text-sm leading-7 text-slate-600">
                   Eles concentram os principais argumentos sobre impacto ambiental, logística reversa, triagem, reuso e

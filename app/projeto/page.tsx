@@ -14,7 +14,7 @@ export default function ProjetoPage() {
       <PageHero
         eyebrow="Estrutura do trabalho"
         title="O projeto EcoTech também possui uma demonstração física."
-        description="Além do site, o trabalho apresenta materiais reais para mostrar o problema e a solução de forma visual, direta e fácil de entender."
+        description="Além do site, o trabalho apresenta materiais reais para demonstrar o problema e a solução de forma visual, objetiva e didática."
         imageSrc="/assets/hero-ewaste.svg"
         imageAlt="Ilustração sobre tecnologia, reciclagem e conscientização ambiental"
       />
@@ -24,8 +24,8 @@ export default function ProjetoPage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Parte física"
-              title="A apresentação usa caixas com resíduos eletrônicos para facilitar a conscientização."
-              description="A ideia é mostrar, de forma simples, como o descarte incorreto e o descarte correto geram resultados muito diferentes."
+              title="A apresentação utiliza caixas com resíduos eletrônicos para reforçar a conscientização."
+              description="A proposta é mostrar, de forma clara, como o descarte incorreto e a destinação adequada produzem resultados muito diferentes."
             />
             <div className="grid gap-4 md:grid-cols-3">
               {projetoHighlights.map((item) => (
@@ -45,7 +45,7 @@ export default function ProjetoPage() {
             <SectionHeading
               label="Materiais usados"
               title="A demonstração reúne exemplos de lixo eletrônico do dia a dia."
-              description="Isso ajuda o público a reconhecer quais objetos precisam de descarte correto e onde eles aparecem na rotina."
+              description="Isso ajuda o público a reconhecer quais objetos exigem descarte correto e como eles aparecem na rotina."
             />
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -65,15 +65,15 @@ export default function ProjetoPage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Objetivo da apresentação"
-              title="A demonstração ajuda o público a visualizar o problema e a solução."
-              description="A parte física complementa a pesquisa e reforça a conscientização ambiental com comparação direta e aprendizado prático."
+              title="A demonstração permite visualizar com clareza o problema e a solução."
+              description="A parte física complementa a pesquisa e reforça a conscientização ambiental por meio de comparação direta e aprendizado prático."
             />
 
             <div className="grid gap-4 lg:grid-cols-2">
               <article className="card-surface p-6">
                 <h3 className="font-display text-2xl font-semibold text-slate-950">Comparação visual</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  As caixas mostram a diferença entre o descarte incorreto no lixo comum e o encaminhamento correto
+                  As caixas mostram a diferença entre o descarte incorreto no lixo comum e o encaminhamento adequado
                   para os ecopontos.
                 </p>
               </article>

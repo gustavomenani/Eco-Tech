@@ -18,7 +18,7 @@ export default function SobrePage() {
       <PageHero
         eyebrow="Sobre o tema"
         title="O que é lixo eletrônico e por que ele preocupa?"
-        description="Entender o problema é o primeiro passo para mudar hábitos, reduzir riscos e proteger o meio ambiente."
+        description="Compreender o problema é o primeiro passo para rever hábitos, reduzir riscos e proteger o meio ambiente."
         imageSrc="/assets/hero-ewaste.svg"
         imageAlt="Ilustração sobre equipamentos eletrônicos e reciclagem"
       />
@@ -28,8 +28,8 @@ export default function SobrePage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="O que é lixo eletrônico"
-              title="É todo aparelho ou acessório eletrônico que foi descartado."
-              description="Isso inclui materiais pequenos e grandes do nosso dia a dia, desde pilhas até computadores."
+              title="É todo aparelho ou acessório eletrônico que chegou ao fim do seu uso."
+              description="Isso inclui materiais pequenos e grandes do cotidiano, desde pilhas até computadores."
             />
             <div className="grid gap-4 md:grid-cols-3">
               {sobreCards.map((item) => (

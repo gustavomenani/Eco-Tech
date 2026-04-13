@@ -21,7 +21,7 @@ export default function SolucoesPage() {
       <PageHero
         eyebrow="Soluções e atitudes"
         title="Como descartar corretamente e como qualquer pessoa pode ajudar."
-        description="Reciclar, reutilizar, separar e doar são atitudes simples que fazem diferença. O EcoTech organiza essas ações de forma clara para apresentação escolar."
+        description="Reciclar, reutilizar, separar e doar são medidas simples que produzem efeito concreto. O EcoTech organiza essas ações de forma clara para apresentação escolar."
         imageSrc="/assets/eco-cycle.svg"
         imageAlt="Ilustração sobre reciclagem, reutilização e soluções sustentáveis"
       />
@@ -51,7 +51,7 @@ export default function SolucoesPage() {
           <div className="hero-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Como qualquer pessoa pode ajudar"
-              title="Pequenas atitudes já ajudam muito."
+              title="Medidas simples já produzem efeito relevante."
               description="A mudança começa com hábitos simples dentro de casa e continua com separação, reaproveitamento e descarte consciente."
             />
             <div className="grid gap-4 lg:grid-cols-4">
@@ -153,7 +153,7 @@ export default function SolucoesPage() {
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   O vídeo da TV Senado e o material do Momento Ambiental conectam indústria, legislação, hábitos de
-                  consumo e conscientização em linguagem mais direta para o público escolar.
+                  consumo e conscientização em linguagem direta para o público escolar.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-4">
                   <a

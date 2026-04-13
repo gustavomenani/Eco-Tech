@@ -11,7 +11,7 @@
   "twitterCard": "summary_large_image",
   "footerDescription": "Projeto escolar sobre conscientização, descarte correto e soluções para o lixo eletrônico.",
   "footerNote": "Conteúdo educativo com foco em orientação prática e responsabilidade ambiental.",
-  "manifestDescription": "Projeto escolar EcoTech sobre lixo eletrônico, descarte correto e ecopontos em Araçatuba-SP.",
+  "manifestDescription": "Projeto escolar EcoTech sobre lixo eletrônico, descarte correto e ecopontos em Araçatuba e região.",
   "nav": [
     {
       "href": "/",
@@ -42,7 +42,7 @@
     {
       "path": "/",
       "title": "EcoTech | Início",
-      "description": "Projeto escolar EcoTech sobre lixo eletrônico, descarte correto, conscientização ambiental e ecopontos em Araçatuba-SP.",
+      "description": "Projeto escolar EcoTech sobre lixo eletrônico, descarte correto, conscientização ambiental e ecopontos em Araçatuba e região.",
       "schemaType": "WebPage"
     },
     {
