@@ -1,6 +1,6 @@
 # EcoTech
 
-Site escolar em `Next.js` sobre lixo eletronico, descarte correto e ecopontos em Aracatuba-SP. O projeto foi reconstruido para deploy direto no Vercel, leitura rapida no celular e acesso simples por QR code.
+Site escolar em `Next.js` sobre lixo eletronico, descarte correto e ecopontos em Aracatuba e regiao. O projeto foi reconstruido para deploy direto no Vercel, leitura rapida no celular e acesso simples por QR code.
 
 ## Stack
 
@@ -56,6 +56,7 @@ npm.cmd run lint
 npm.cmd run typecheck
 npm.cmd run test
 npm.cmd run build
+npm.cmd run test:e2e
 ```
 
 Para instalar o Chromium do Playwright e rodar os testes E2E:
@@ -82,6 +83,18 @@ npm.cmd run update:ecopoints
 
 O script consulta a fonte oficial, reconstrui `src/data/ecopontos-aracatuba.json` e preserva os aliases e IDs definidos em `src/data/ecopoints-geo.json`.
 
+## Qualidade automatizada
+
+O repositório já possui workflow em `.github/workflows/site-quality.yml` com:
+
+- `lint`
+- `typecheck`
+- testes unitários com `Vitest`
+- `build` de produção
+- testes E2E com `Playwright`
+
+Em CI o projeto usa `Node 24`, igual ao `engines.node` do `package.json`.
+
 ## APIs publicas
 
 - `GET /api/ecopoints`
@@ -92,3 +105,15 @@ O script consulta a fonte oficial, reconstrui `src/data/ecopontos-aracatuba.json
 O projeto foi preparado para deploy direto no Vercel sem depender de Python. Basta importar o repositorio. As URLs canonicas usam automaticamente `SITE_URL`, `VERCEL_PROJECT_PRODUCTION_URL` ou `VERCEL_URL` quando esses valores estiverem disponiveis.
 
 O fallback versionado usa `https://eco-tech-jade.vercel.app/`. Se o site for publicado em outro dominio ou ambiente, defina `SITE_URL`.
+
+## Checklist de publicacao
+
+Antes de publicar ou atualizar a versao em producao:
+
+1. Rode `npm.cmd run lint`.
+2. Rode `npm.cmd run typecheck`.
+3. Rode `npm.cmd run test`.
+4. Rode `npx.cmd playwright install chromium` se for a primeira execucao local.
+5. Rode `npm.cmd run test:e2e`.
+6. Rode `npm.cmd run build`.
+7. Confirme `SITE_URL` no dominio final, se nao for usar a URL padrao do projeto.

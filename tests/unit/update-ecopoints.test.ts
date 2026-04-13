@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { getEcopointsGeoDocument } from "@/lib/data";
-import { buildEcopointsDocument, syncEcopoints } from "@/scripts/update-ecopoints";
+import { buildEcopointsDocument, formatIsoLocalDate, syncEcopoints } from "@/scripts/update-ecopoints";
 
 const sampleHtml = `
 <section>
@@ -29,7 +29,23 @@ describe("update ecopoints script", () => {
 
     expect(document.points).toHaveLength(3);
     expect(document.points.at(-1)?.type).toBe("pev");
+    expect(document.points.at(-1)?.address).toContain("Av. Doutor Alcides Fagundes Chagas, 222");
     expect(document.consultedAt).toBe("2026-03-31");
+  });
+
+  it("throws when an ecoponto entry loses its address line", () => {
+    const malformedHtml = sampleHtml.replace(
+      "<p>Cruzamento entre Av. Juscelino Kubitschek e Rua Adalberto da Cunha Capela.</p>",
+      ""
+    );
+
+    expect(() => buildEcopointsDocument(malformedHtml, getEcopointsGeoDocument())).toThrow(
+      /endereç|endereço|identificar o endereço/i
+    );
+  });
+
+  it("formats local ISO dates without UTC drift", () => {
+    expect(formatIsoLocalDate(new Date(2026, 2, 31, 23, 30, 0))).toBe("2026-03-31");
   });
 
   it("does not write a file when the fetch step fails", async () => {

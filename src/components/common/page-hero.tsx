@@ -8,6 +8,7 @@ type PageHeroProps = {
   imageAlt: string;
   imageWidth?: number;
   imageHeight?: number;
+  imageSizes?: string;
   actions?: React.ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function PageHero({
   imageAlt,
   imageWidth = 640,
   imageHeight = 520,
+  imageSizes = "(min-width: 768px) 42vw, 100vw",
   actions
 }: PageHeroProps) {
   return (
@@ -44,6 +46,7 @@ export function PageHero({
                 alt={imageAlt}
                 width={imageWidth}
                 height={imageHeight}
+                sizes={imageSizes}
                 className="h-auto w-full rounded-[28px]"
                 priority
               />

@@ -13,6 +13,7 @@ describe("ecopoints helpers", () => {
     const result = filterEcopoints(document.points, {
       query: "aviação",
       type: "pev",
+      city: "all",
       material: "lampadas"
     });
 

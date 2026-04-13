@@ -31,16 +31,16 @@ export const getResourceMap = cache(() => {
   return new Map(items.map((item) => [item.id, item]));
 });
 
+export function getResourceById(id: string): ResourceItem {
+  const resource = getResourceMap().get(id);
+
+  if (!resource) {
+    throw new Error(`Recurso desconhecido: ${id}`);
+  }
+
+  return resource;
+}
+
 export function getResourcesByIds(ids: string[]): ResourceItem[] {
-  const resourceMap = getResourceMap();
-
-  return ids.map((id) => {
-    const resource = resourceMap.get(id);
-
-    if (!resource) {
-      throw new Error(`Recurso desconhecido: ${id}`);
-    }
-
-    return resource;
-  });
+  return ids.map((id) => getResourceById(id));
 }

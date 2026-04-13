@@ -8,11 +8,25 @@ import { buildPageJsonLd, buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata("/fontes");
 
+function normalizeUrl(url: string) {
+  return url.trim().toLowerCase();
+}
+
 export default function FontesPage() {
   const resources = getResourcesDocument();
   const ecopointsDoc = getEcopointsDocument();
   const featuredResources = getResourcesByIds(resources.sourcesFeaturedIds);
   const videoResources = getResourcesByIds(resources.sourcesVideoIds);
+  const ecopointsSourcePanels = ecopointsDoc.sources.map((source) => ({
+    title: source.name,
+    description: source.note || "Fonte consultada para os dados locais de descarte e ecopontos.",
+    url: source.url,
+    cta: "Abrir fonte"
+  }));
+  const uniqueSourcePanels = [...resources.sourcePanels, ...ecopointsSourcePanels].filter((panel, index, panels) => {
+    const normalizedUrl = normalizeUrl(panel.url);
+    return panels.findIndex((item) => normalizeUrl(item.url) === normalizedUrl) === index;
+  });
 
   return (
     <>
@@ -68,8 +82,8 @@ export default function FontesPage() {
             <ResourceGrid resources={featuredResources} context="sources" dense />
 
             <div className="grid gap-4 lg:grid-cols-2">
-              {resources.sourcePanels.map((panel) => (
-                <article key={panel.title} className="card-surface p-6">
+              {uniqueSourcePanels.map((panel) => (
+                <article key={panel.url} className="card-surface p-6">
                   <h3 className="font-display text-2xl font-semibold text-slate-950">{panel.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{panel.description}</p>
                   <a

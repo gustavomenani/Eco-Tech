@@ -26,7 +26,7 @@ export const homeSections = [
   },
   {
     title: "Ecopontos",
-    text: "Organiza os pontos de descarte de Araçatuba-SP com filtros e mapa para consulta rápida.",
+    text: "Organiza os pontos de descarte de Araçatuba e cidades vizinhas com filtros e mapa para consulta rápida.",
     href: "/ecopontos"
   },
   {

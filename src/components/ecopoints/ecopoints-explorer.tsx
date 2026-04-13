@@ -14,6 +14,22 @@ type EcopointsExplorerProps = {
   materials: MaterialCatalogItem[];
 };
 
+function summarizeCities(cities: string[]) {
+  if (cities.length === 0) {
+    return "sua região";
+  }
+
+  if (cities.length === 1) {
+    return cities[0];
+  }
+
+  if (cities.length === 2) {
+    return `${cities[0]} e ${cities[1]}`;
+  }
+
+  return `${cities.length} cidades da região`;
+}
+
 function getMapCardTitle(point: Ecopoint) {
   if (point.type === "pev") {
     return "Secretaria de Meio Ambiente";
@@ -179,32 +195,37 @@ function MapFrame({
 export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps) {
   const [query, setQuery] = useState("");
   const [type, setType] = useState<"all" | Ecopoint["type"]>("all");
+  const [city, setCity] = useState("all");
   const [material, setMaterial] = useState("all");
   const [selectedPointId, setSelectedPointId] = useState(points[0]?.id ?? "");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(true);
   const deferredQuery = useDeferredValue(query);
   const materialLookup = useMemo(() => materialLabelMap(materials), [materials]);
+  const cityOptions = useMemo(() => [...new Set(points.map((point) => point.city))].sort(), [points]);
 
   const filteredPoints = useMemo(
     () =>
       filterEcopoints(points, {
         query: deferredQuery,
         type,
+        city,
         material
       }),
-    [deferredQuery, material, points, type]
+    [city, deferredQuery, material, points, type]
   );
 
   const activeMaterialLabel = material === "all" ? "" : materialLookup.get(material) || "";
+  const citySummary = summarizeCities(cityOptions);
   const activeIndex = Math.max(
     0,
     filteredPoints.findIndex((point) => point.id === selectedPointId)
   );
-  const activeFiltersCount = Number(query.trim().length > 0) + Number(type !== "all") + Number(material !== "all");
+  const activeFiltersCount =
+    Number(query.trim().length > 0) + Number(type !== "all") + Number(city !== "all") + Number(material !== "all");
   const filterSummary =
     activeFiltersCount > 0
       ? `${activeFiltersCount} filtro${activeFiltersCount > 1 ? "s" : ""} ativo${activeFiltersCount > 1 ? "s" : ""}`
-      : "Busca, tipo e material";
+      : "Busca, tipo, cidade e material";
 
   return (
     <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
@@ -228,9 +249,9 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
         </div>
 
         <div id="ecopoints-mobile-filters" className={`${mobileFiltersOpen ? "block" : "hidden"} space-y-5 md:block`}>
-          <div className="grid gap-4 md:grid-cols-[1.5fr_0.9fr]">
+          <div className="grid gap-4 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
             <label className="space-y-2">
-              <span className="text-sm font-semibold text-slate-700">Buscar por endereço, bairro ou material</span>
+              <span className="text-sm font-semibold text-slate-700">Buscar por endereço, cidade ou material</span>
               <input
                 type="search"
                 name="search"
@@ -241,7 +262,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
                   const nextValue = event.target.value;
                   startTransition(() => setQuery(nextValue));
                 }}
-                placeholder="Ex.: bateria, Fundadores, Aviacao…"
+                placeholder="Ex.: bateria, Birigui, Fundadores…"
                 className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-emerald-300"
               />
             </label>
@@ -257,6 +278,23 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
                 <option value="all">Todos os pontos</option>
                 <option value="ecoponto">Somente ecopontos</option>
                 <option value="pev">Somente PEV</option>
+              </select>
+            </label>
+
+            <label className="space-y-2">
+              <span className="text-sm font-semibold text-slate-700">Cidade</span>
+              <select
+                name="city"
+                value={city}
+                onChange={(event) => setCity(event.target.value)}
+                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition focus:border-emerald-300"
+              >
+                <option value="all">Todas as cidades</option>
+                {cityOptions.map((cityOption) => (
+                  <option key={cityOption} value={cityOption}>
+                    {cityOption}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -305,8 +343,8 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
               : "Nenhum ponto corresponde aos filtros atuais. Tente outro termo ou escolha outro tipo."
             : filteredPoints.length === points.length
               ? activeMaterialLabel
-                ? `${filteredPoints.length} pontos aceitam ${activeMaterialLabel.toLowerCase()} em Araçatuba-SP.`
-                : `${filteredPoints.length} pontos disponíveis para descarte em Araçatuba-SP.`
+                ? `${filteredPoints.length} pontos aceitam ${activeMaterialLabel.toLowerCase()} em ${citySummary}.`
+                : `${filteredPoints.length} pontos disponíveis para descarte em ${citySummary}.`
               : activeMaterialLabel
                 ? `${filteredPoints.length} de ${points.length} pontos correspondem aos filtros para ${activeMaterialLabel.toLowerCase()}.`
                 : `${filteredPoints.length} de ${points.length} pontos correspondem aos filtros atuais.`}
@@ -319,7 +357,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
           <h3 className="font-display text-[1.8rem] font-semibold leading-[1.05] text-balance text-slate-950 md:text-3xl">Mapa real com reserva esquemática</h3>
           <p className="text-sm leading-7 text-pretty text-slate-600">
             O painel abre um mapa real do ponto selecionado. Se a visualização externa falhar, o site mostra um mapa
-            simplificado para manter a apresentação funcionando.
+            simplificado para manter a apresentação funcionando em qualquer cidade filtrada.
           </p>
         </div>
 
@@ -349,7 +387,7 @@ export function EcopointsExplorer({ points, materials }: EcopointsExplorerProps)
                       {point.type === "pev" ? "PEV" : "Ecoponto"}
                     </span>
                     <span className="rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">
-                      Araçatuba-SP
+                      {point.city}
                     </span>
                   </div>
                   <h3 className="font-display text-xl font-semibold leading-[1.08] text-balance text-slate-950 md:text-2xl">{point.name}</h3>

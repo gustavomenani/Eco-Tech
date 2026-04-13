@@ -1,9 +1,26 @@
 {
-  "city": "Araçatuba-SP",
-  "sourceName": "Prefeitura de Araçatuba",
-  "sourceUrl": "https://aracatuba.sp.gov.br/sustentabilidade",
-  "consultedAt": "2026-03-24",
-  "consultedAtDisplay": "24 de março de 2026",
+  "city": "Araçatuba e região",
+  "sourceName": "Levantamento EcoTech (prefeituras + Green Eletron/ABREE)",
+  "sourceUrl": "https://greeneletron.org.br/onde-descartar/lista-pev/",
+  "sources": [
+    {
+      "name": "Prefeitura de Araçatuba - Sustentabilidade",
+      "url": "https://aracatuba.sp.gov.br/sustentabilidade",
+      "note": "Base dos ecopontos municipais de Araçatuba."
+    },
+    {
+      "name": "Green Eletron - Lista de PEVs",
+      "url": "https://greeneletron.org.br/onde-descartar/lista-pev/",
+      "note": "Base de pontos de entrega de eletroeletrônicos em cidades vizinhas."
+    },
+    {
+      "name": "DAEP Penápolis - CORPE",
+      "url": "https://www.daep.com.br/corpe/",
+      "note": "Referência complementar para descarte eletrônico em Penápolis."
+    }
+  ],
+  "consultedAt": "2026-04-12",
+  "consultedAtDisplay": "12 de abril de 2026",
   "materialsCatalog": [
     {
       "key": "entulho",
@@ -54,8 +71,9 @@
     {
       "id": "lago-azul",
       "type": "ecoponto",
+      "city": "Araçatuba-SP",
       "name": "Ecoponto Lago Azul",
-      "address": "Cruzamento entre Av. Juscelino Kubitschek e Rua José Guerra.",
+      "address": "Cruzamento da Avenida Juscelino Kubitschek com a Rua José Guerra, próximo ao bairro Saudade (CEP 16022-620).",
       "materialKeys": [
         "entulho",
         "madeira",
@@ -70,15 +88,16 @@
         "restos-verdes"
       ],
       "hours": "Todos os dias, 24h.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Av.+Juscelino+Kubitschek+e+Rua+Jos%C3%A9+Guerra.%2C+Ara%C3%A7atuba+-+SP",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=-21.2369994,-50.4579689",
       "lat": -21.2369994,
       "lon": -50.4579689
     },
     {
       "id": "claudionor-cinti",
       "type": "ecoponto",
+      "city": "Araçatuba-SP",
       "name": "Ecoponto Claudionor Cinti",
-      "address": "Cruzamento entre Av. Juscelino Kubitschek e Rua Adalberto da Cunha Capela.",
+      "address": "Cruzamento da Avenida Juscelino Kubitschek com a Rua Adalberto da Cunha Capela (CEP 16023-000).",
       "materialKeys": [
         "entulho",
         "madeira",
@@ -93,15 +112,16 @@
         "restos-verdes"
       ],
       "hours": "Todos os dias, 24h.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Av.+Juscelino+Kubitschek+e+Rua+Adalberto+da+Cunha+Capela.%2C+Ara%C3%A7atuba+-+SP",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=-21.2302376,-50.4713378",
       "lat": -21.2302376,
       "lon": -50.4713378
     },
     {
       "id": "sao-jose",
       "type": "ecoponto",
+      "city": "Araçatuba-SP",
       "name": "Ecoponto São José",
-      "address": "Cruzamento entre Rua Rafael Manarelli e Rua Deodato Izique.",
+      "address": "Cruzamento da Rua Rafael Manarelli com a Rua Deodato Izique, bairro São José (região do CEP 16070-090).",
       "materialKeys": [
         "entulho",
         "madeira",
@@ -116,15 +136,16 @@
         "restos-verdes"
       ],
       "hours": "Todos os dias, 24h.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cruzamento+entre+Rua+Rafael+Manarelli+e+Rua+Deodato+Izique.%2C+Ara%C3%A7atuba+-+SP",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=-21.2001,-50.474",
       "lat": -21.2001,
       "lon": -50.474
     },
     {
       "id": "country",
       "type": "ecoponto",
+      "city": "Araçatuba-SP",
       "name": "Ecoponto Country",
-      "address": "Odorindo Perenha, 2220 (em frente antigo Country Clube).",
+      "address": "Avenida Odorindo Perenha, 2220 (em frente ao antigo Country Clube).",
       "materialKeys": [
         "entulho",
         "madeira",
@@ -146,8 +167,9 @@
     {
       "id": "fundadores",
       "type": "ecoponto",
+      "city": "Araçatuba-SP",
       "name": "Ecoponto Fundadores",
-      "address": "Av. dos Fundadores, 4783 (final da avenida).",
+      "address": "Avenida dos Fundadores, 4783 (final da avenida).",
       "materialKeys": [
         "entulho",
         "madeira",
@@ -169,8 +191,9 @@
     {
       "id": "pev-secretaria-meio-ambiente",
       "type": "pev",
+      "city": "Araçatuba-SP",
       "name": "PEV da Secretaria Municipal de Meio Ambiente e Sustentabilidade",
-      "address": "Av. Doutor Alcides Fagundes Chagas, 222 – Bairro Aviação.",
+      "address": "Av. Doutor Alcides Fagundes Chagas, 222 - Bairro Aviação.",
       "materialKeys": [
         "madeira",
         "plastico",
@@ -181,9 +204,69 @@
         "baterias-domesticas"
       ],
       "hours": "Consulte o atendimento da Secretaria Municipal de Meio Ambiente e Sustentabilidade.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Av.+Doutor+Alcides+Fagundes+Chagas%2C+222+%E2%80%93+Bairro+Avia%C3%A7%C3%A3o.%2C+Ara%C3%A7atuba+-+SP",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Av.+Doutor+Alcides+Fagundes+Chagas%2C+222%2C+Ara%C3%A7atuba+-+SP",
       "lat": -21.1981831,
       "lon": -50.431116
+    },
+    {
+      "id": "birigui-pev-central",
+      "type": "pev",
+      "city": "Birigui-SP",
+      "name": "Enterprise Telecom (Ponto ABREE)",
+      "address": "Rua Bento da Cruz, 585 - Centro. CEP 16200-108.",
+      "materialKeys": [
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas"
+      ],
+      "hours": "Horário não informado na base pública Green Eletron/ABREE. Consulte o estabelecimento antes da entrega.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Bento+da+Cruz%2C+585+-+Centro%2C+Birigui+-+SP%2C+16200-108",
+      "lat": -21.2906382,
+      "lon": -50.3427459
+    },
+    {
+      "id": "guararapes-ecoponto-municipal",
+      "type": "pev",
+      "city": "Guararapes-SP",
+      "name": "FMO Telecomunicacoes (Ponto ABREE)",
+      "address": "Rua Marechal Floriano, 774 - Centro. CEP 16700-000.",
+      "materialKeys": [
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas"
+      ],
+      "hours": "Horário não informado na base pública Green Eletron/ABREE. Consulte o estabelecimento antes da entrega.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Marechal+Floriano%2C+774+-+Centro%2C+Guararapes+-+SP%2C+16700-000",
+      "lat": -21.254236,
+      "lon": -50.6419481
+    },
+    {
+      "id": "penapolis-pev-municipal",
+      "type": "pev",
+      "city": "Penápolis-SP",
+      "name": "Alea Eletro Comercial (Ponto ABREE)",
+      "address": "Avenida Luiz Osorio, 379 - Centro. CEP 16300-013.",
+      "materialKeys": [
+        "plastico",
+        "metal",
+        "vidro",
+        "papel-papelao",
+        "eletrodomesticos",
+        "lampadas",
+        "baterias-domesticas"
+      ],
+      "hours": "Horário não informado na base pública Green Eletron/ABREE. Consulte o estabelecimento antes da entrega.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Avenida+Luiz+Osorio%2C+379+-+Centro%2C+Penapolis+-+SP%2C+16300-013",
+      "lat": -21.4197162,
+      "lon": -50.0772672
     }
   ]
 }

@@ -8,6 +8,10 @@ type ResourceGridProps = {
 };
 
 export function ResourceGrid({ resources, context, dense = false }: ResourceGridProps) {
+  const imageSizes = dense
+    ? "(min-width: 768px) 50vw, 100vw"
+    : "(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw";
+
   return (
     <div className={`stagger-grid grid gap-4 md:gap-6 ${dense ? "md:grid-cols-2" : "lg:grid-cols-2 xl:grid-cols-4"}`}>
       {resources.map((resource) => {
@@ -24,6 +28,7 @@ export function ResourceGrid({ resources, context, dense = false }: ResourceGrid
                 alt={resource.media.alt}
                 width={resource.media.width}
                 height={resource.media.height}
+                sizes={imageSizes}
                 className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
               />
               <span className="absolute left-3 top-3 rounded-full bg-slate-950/85 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white md:left-4 md:top-4 md:text-xs md:tracking-[0.18em]">

@@ -20,7 +20,7 @@ export type SiteConfig = {
   backgroundColor: string;
   socialImage: string;
   socialImageAlt: string;
-  twitterCard: string;
+  twitterCard: "summary" | "summary_large_image";
   footerDescription: string;
   footerNote: string;
   manifestDescription: string;
@@ -36,6 +36,7 @@ export type MaterialCatalogItem = {
 export type Ecopoint = {
   id: string;
   type: "ecoponto" | "pev";
+  city: string;
   name: string;
   address: string;
   materialKeys: string[];
@@ -45,10 +46,17 @@ export type Ecopoint = {
   lon: number;
 };
 
+export type EcopointsSource = {
+  name: string;
+  url: string;
+  note?: string;
+};
+
 export type EcopointsDocument = {
   city: string;
   sourceName: string;
   sourceUrl: string;
+  sources: EcopointsSource[];
   consultedAt: string;
   consultedAtDisplay: string;
   materialsCatalog: MaterialCatalogItem[];

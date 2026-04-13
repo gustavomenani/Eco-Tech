@@ -2,11 +2,18 @@ import { JsonLd } from "@/components/common/json-ld";
 import { PageHero } from "@/components/common/page-hero";
 import { SectionHeading } from "@/components/common/section-heading";
 import { solucoesCards, solucoesDeepDive, solucoesSteps } from "@/content/page-content";
+import { getResourcesByIds } from "@/lib/data";
 import { buildPageJsonLd, buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata("/solucoes");
 
 export default function SolucoesPage() {
+  const [solutionsResource, momentoAmbientalVideo, tvSenadoVideo] = getResourcesByIds([
+    "perspectivas-fatece",
+    "momento-ambiental",
+    "tv-senado"
+  ]);
+
   return (
     <>
       <JsonLd data={buildPageJsonLd("/solucoes")} />
@@ -130,7 +137,7 @@ export default function SolucoesPage() {
                   devolvida ao uso por meio de doação e aproveitamento social.
                 </p>
                 <a
-                  href="https://fatece.edu.br/arquivos/arquivos-revistas/perspectiva/volume10/Paulo%20Sergio%20de%20Souza%20Filho;%20Priscila%20Ligabo%20Murarolli.pdf"
+                  href={solutionsResource.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex text-sm font-semibold text-emerald-700"
@@ -150,7 +157,7 @@ export default function SolucoesPage() {
                 </p>
                 <div className="mt-5 flex flex-wrap gap-4">
                   <a
-                    href="https://www.youtube.com/watch?v=VyLFK7r-LAw"
+                    href={tvSenadoVideo.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-semibold text-emerald-700"
@@ -158,7 +165,7 @@ export default function SolucoesPage() {
                     Abrir vídeo da TV Senado
                   </a>
                   <a
-                    href="https://www.youtube.com/watch?v=YIL4QRPkZU4"
+                    href={momentoAmbientalVideo.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-semibold text-emerald-700"

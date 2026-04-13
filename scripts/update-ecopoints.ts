@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { ecopointsGeoDocumentSchema } from "@/lib/schemas";
+import { ecopointsDocumentSchema, ecopointsGeoDocumentSchema } from "@/lib/schemas";
 import type { EcopointsDocument, EcopointsGeoDocument, GeoPoint, MaterialCatalogItem } from "@/lib/types";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -88,6 +88,14 @@ export function formatPtBrDate(date: Date) {
   return `${date.getDate()} de ${ptBrMonths[date.getMonth() + 1]} de ${date.getFullYear()}`;
 }
 
+export function formatIsoLocalDate(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 export function decodeHtmlEntities(value: string) {
   return value
     .replace(/&#(\d+);/g, (_, numeric) => String.fromCodePoint(Number(numeric)))
@@ -151,8 +159,8 @@ export function materialKeysFromText(text: string) {
   return patterns.flatMap(([key, aliases]) => (aliases.some((alias) => normalized.includes(alias)) ? [key] : []));
 }
 
-export function buildMapsUrl(address: string) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, Araçatuba - SP`)}`;
+export function buildMapsUrl(address: string, city = "Araçatuba-SP") {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, ${city}`)}`;
 }
 
 function geoLookupByAlias(geoDocument: EcopointsGeoDocument) {
@@ -177,11 +185,21 @@ function matchGeo(name: string, lookup: Map<string, GeoPoint>) {
   return geo;
 }
 
+function requireNonEmptyLine(lines: string[], index: number, description: string) {
+  const value = lines[index]?.trim();
+
+  if (!value) {
+    throw new Error(`Não foi possível identificar ${description}.`);
+  }
+
+  return value;
+}
+
 function parseEcopoints(sectionLines: string[], lookup: Map<string, GeoPoint>) {
   const materialsIndex = findLineIndex(sectionLines, "O que levar a um ecoponto");
   const hoursIndex = findLineIndex(sectionLines, "Horário de atendimento", materialsIndex);
-  const materialsText = sectionLines[materialsIndex + 1];
-  const hoursText = sectionLines[hoursIndex + 1];
+  const materialsText = requireNonEmptyLine(sectionLines, materialsIndex + 1, "os materiais aceitos dos ecopontos");
+  const hoursText = requireNonEmptyLine(sectionLines, hoursIndex + 1, "o horário de atendimento dos ecopontos");
   const pointLines = sectionLines.slice(0, materialsIndex);
   const points: EcopointsDocument["points"] = [];
 
@@ -192,17 +210,19 @@ function parseEcopoints(sectionLines: string[], lookup: Map<string, GeoPoint>) {
       continue;
     }
 
-    const address = `${pointLines[index + 1]?.replace(/\.$/, "")}.`;
+    const rawAddress = requireNonEmptyLine(pointLines, index + 1, `o endereço de ${name}`);
+    const address = `${rawAddress.replace(/\.$/, "")}.`;
     const geo = matchGeo(name, lookup);
 
     points.push({
       id: geo.id,
       type: "ecoponto",
+      city: "Araçatuba-SP",
       name,
       address,
       materialKeys: materialKeysFromText(materialsText),
       hours: `${hoursText.replace(/\.$/, "")}.`,
-      mapsUrl: buildMapsUrl(address),
+      mapsUrl: buildMapsUrl(address, "Araçatuba-SP"),
       lat: geo.lat,
       lon: geo.lon
     });
@@ -216,9 +236,8 @@ function parseEcopoints(sectionLines: string[], lookup: Map<string, GeoPoint>) {
 function parsePev(sectionLines: string[], lookup: Map<string, GeoPoint>) {
   const name = "PEV da Secretaria Municipal de Meio Ambiente e Sustentabilidade";
   const geo = matchGeo(name, lookup);
-  const rawLine = sectionLines[0];
-  const addressPart = rawLine.includes("–") ? rawLine.split("–", 2)[1] : rawLine;
-  const address = `${addressPart.trim().replace(/\.$/, "")}.`;
+  const rawLine = requireNonEmptyLine(sectionLines, 0, "o endereço do PEV");
+  const address = `${rawLine.trim().replace(/\.$/, "")}.`;
   const materialsLine = sectionLines.find((line) => line.startsWith("O que levar a um PEV:"));
 
   if (!materialsLine) {
@@ -228,11 +247,12 @@ function parsePev(sectionLines: string[], lookup: Map<string, GeoPoint>) {
   return {
     id: geo.id,
     type: "pev" as const,
+    city: "Araçatuba-SP",
     name,
     address,
     materialKeys: materialKeysFromText(materialsLine.split(":", 2)[1].trim()),
     hours: "Consulte o atendimento da Secretaria Municipal de Meio Ambiente e Sustentabilidade.",
-    mapsUrl: buildMapsUrl(address),
+    mapsUrl: buildMapsUrl(address, "Araçatuba-SP"),
     lat: geo.lat,
     lon: geo.lon
   };
@@ -247,15 +267,22 @@ export function buildEcopointsDocument(html: string, geoDocument: EcopointsGeoDo
 
   points.push(parsePev(pevSection, lookup));
 
-  return {
+  return ecopointsDocumentSchema.parse({
     city: "Araçatuba-SP",
     sourceName: "Prefeitura de Araçatuba",
     sourceUrl,
-    consultedAt: today.toISOString().slice(0, 10),
+    sources: [
+      {
+        name: "Prefeitura de Araçatuba",
+        url: sourceUrl,
+        note: "Fonte oficial usada na atualização automática dos ecopontos."
+      }
+    ],
+    consultedAt: formatIsoLocalDate(today),
     consultedAtDisplay: formatPtBrDate(today),
     materialsCatalog,
     points
-  };
+  });
 }
 
 export async function syncEcopoints({

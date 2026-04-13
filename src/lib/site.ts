@@ -45,7 +45,7 @@ export function buildPageMetadata(path: string): Metadata {
       ]
     },
     twitter: {
-      card: config.twitterCard as "summary_large_image",
+      card: config.twitterCard,
       title: page.title,
       description: page.description,
       images: [

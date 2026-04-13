@@ -14,6 +14,8 @@ export default function HomePage() {
   const resources = getResourcesDocument();
   const spotlightResources = getResourcesByIds(resources.homeSpotlightIds);
   const featuredResources = getResourcesByIds(resources.homeResourceIds);
+  const spotlightIds = new Set(resources.homeSpotlightIds);
+  const secondaryFeaturedResources = featuredResources.filter((resource) => !spotlightIds.has(resource.id));
   const fallbackSiteUrl = resolveSiteUrl().toString();
 
   return (
@@ -158,7 +160,7 @@ export default function HomePage() {
               </article>
 
               <div className="grid gap-4">
-                {featuredResources.slice(2).map((resource) => (
+                {secondaryFeaturedResources.map((resource) => (
                   <article key={resource.id} className="card-surface p-5">
                     <span className="section-label">{resource.home.badge}</span>
                     <h3 className="mt-3 font-display text-2xl font-semibold text-slate-950">{resource.home.title}</h3>

@@ -9,6 +9,10 @@ export const metadata = buildPageMetadata("/ecopontos");
 
 export default function EcopontosPage() {
   const ecopointsDoc = getEcopointsDocument();
+  const sources =
+    ecopointsDoc.sources?.length > 0
+      ? ecopointsDoc.sources
+      : [{ name: ecopointsDoc.sourceName, url: ecopointsDoc.sourceUrl }];
 
   return (
     <>
@@ -23,8 +27,8 @@ export default function EcopontosPage() {
 
       <PageHero
         eyebrow="Aplicação prática do projeto"
-        title="Ecopontos em Araçatuba-SP"
-        description="Esta página mostra onde a população pode levar resíduos eletrônicos na cidade, com busca, filtro e apoio visual por mapa."
+        title="Ecopontos em Araçatuba e região"
+        description="Esta página mostra onde a população pode levar resíduos eletrônicos em cidades da região, com busca, filtro e apoio visual por mapa."
         imageSrc="/assets/collection-point.svg"
         imageAlt="Ilustração de ponto de coleta e descarte consciente"
       />
@@ -34,8 +38,8 @@ export default function EcopontosPage() {
           <div className="section-panel space-y-8 px-6 py-8 md:px-10 md:py-10">
             <SectionHeading
               label="Veja onde descartar"
-              title="Locais de descarte correto em Araçatuba-SP"
-              description="Os cartões abaixo mostram endereços, materiais aceitos e links de localização. O objetivo é facilitar a consulta rápida pelo celular."
+              title="Locais de descarte correto em Araçatuba e cidades vizinhas"
+              description="Os cartões abaixo mostram cidade, endereço, materiais aceitos e links de localização. O objetivo é facilitar a consulta rápida pelo celular."
             />
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -54,7 +58,7 @@ export default function EcopontosPage() {
               <article className="card-surface p-5">
                 <h3 className="font-display text-2xl font-semibold text-slate-950">Mapa</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  O mapa ajuda a visualizar os pontos da cidade e mantém a página útil mesmo em uma apresentação ao
+                  O mapa ajuda a visualizar os pontos da região e mantém a página útil mesmo em uma apresentação ao
                   vivo.
                 </p>
               </article>
@@ -66,18 +70,27 @@ export default function EcopontosPage() {
 
             <EcopointsExplorer points={ecopointsDoc.points} materials={ecopointsDoc.materialsCatalog} />
 
-            <p className="text-sm leading-7 text-slate-500">
-              Dados de <strong>{ecopointsDoc.city}</strong> consultados em {ecopointsDoc.consultedAtDisplay}. Fonte:{" "}
-              <a
-                href={ecopointsDoc.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-emerald-700"
-              >
-                {ecopointsDoc.sourceName}
-              </a>
-              .
-            </p>
+            <div className="space-y-2 text-sm leading-7 text-slate-500">
+              <p>
+                Dados de <strong>{ecopointsDoc.city}</strong> consultados em {ecopointsDoc.consultedAtDisplay}.
+              </p>
+              <p className="font-semibold text-slate-700">Fontes consultadas:</p>
+              <ul className="list-disc space-y-1 pl-5">
+                {sources.map((source) => (
+                  <li key={`${source.name}-${source.url}`}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-emerald-700"
+                    >
+                      {source.name}
+                    </a>
+                    {source.note ? ` - ${source.note}` : ""}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

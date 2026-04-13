@@ -13,6 +13,7 @@
     "test": "vitest run",
     "pretest:e2e": "next build",
     "test:e2e": "playwright test",
+    "test:e2e:ci": "playwright test",
     "update:ecopoints": "tsx scripts/update-ecopoints.ts"
   },
   "dependencies": {

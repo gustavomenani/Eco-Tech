@@ -3,11 +3,14 @@ import { JsonLd } from "@/components/common/json-ld";
 import { PageHero } from "@/components/common/page-hero";
 import { SectionHeading } from "@/components/common/section-heading";
 import { sobreAcademicStats, sobreCards, sobreImpacts, sobreNotes } from "@/content/page-content";
+import { getResourcesByIds } from "@/lib/data";
 import { buildPageJsonLd, buildPageMetadata } from "@/lib/site";
 
 export const metadata = buildPageMetadata("/sobre");
 
 export default function SobrePage() {
+  const [impactResource, socialResource] = getResourcesByIds(["oswaldo-cruz", "perspectivas-fatece"]);
+
   return (
     <>
       <JsonLd data={buildPageJsonLd("/sobre")} />
@@ -119,7 +122,7 @@ export default function SobrePage() {
                   por componentes tóxicos e necessidade de logística reversa.
                 </p>
                 <a
-                  href="https://www.oswaldocruz.br/revista_academica/content/pdf/Edicao27_Inae_Castro.pdf"
+                  href={impactResource.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex text-sm font-semibold text-emerald-700"
@@ -138,7 +141,7 @@ export default function SobrePage() {
                   informação, educação, triagem e participação da sociedade.
                 </p>
                 <a
-                  href="https://fatece.edu.br/arquivos/arquivos-revistas/perspectiva/volume10/Paulo%20Sergio%20de%20Souza%20Filho;%20Priscila%20Ligabo%20Murarolli.pdf"
+                  href={socialResource.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex text-sm font-semibold text-emerald-700"

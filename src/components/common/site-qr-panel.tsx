@@ -1,23 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import QRCode from "qrcode";
 
 type SiteQrPanelProps = {
   fallbackUrl: string;
 };
 
+function subscribeToLocation(onStoreChange: () => void) {
+  if (typeof window === "undefined") {
+    return () => undefined;
+  }
+
+  window.addEventListener("hashchange", onStoreChange);
+  window.addEventListener("popstate", onStoreChange);
+
+  return () => {
+    window.removeEventListener("hashchange", onStoreChange);
+    window.removeEventListener("popstate", onStoreChange);
+  };
+}
+
+function getClientPageUrl() {
+  return window.location.href;
+}
+
 export function SiteQrPanel({ fallbackUrl }: SiteQrPanelProps) {
-  const [pageUrl, setPageUrl] = useState(fallbackUrl);
-  const [qrSvg, setQrSvg] = useState<string | null>(null);
+  const pageUrl = useSyncExternalStore(subscribeToLocation, getClientPageUrl, () => fallbackUrl);
+  const [qrState, setQrState] = useState<{
+    error: boolean;
+    svg: string | null;
+    url: string;
+  }>({
+    error: false,
+    svg: null,
+    url: fallbackUrl
+  });
 
   useEffect(() => {
     let isMounted = true;
-    const currentUrl = window.location.href;
 
-    setPageUrl(currentUrl);
-
-    QRCode.toString(currentUrl, {
+    QRCode.toString(pageUrl, {
       type: "svg",
       errorCorrectionLevel: "M",
       margin: 1,
@@ -32,18 +55,30 @@ export function SiteQrPanel({ fallbackUrl }: SiteQrPanelProps) {
           return;
         }
 
-        setQrSvg(svg.replace("<svg ", '<svg class="h-full w-full" '));
+        setQrState({
+          error: false,
+          svg: svg.replace("<svg ", '<svg class="h-full w-full" '),
+          url: pageUrl
+        });
       })
       .catch(() => {
         if (isMounted) {
-          setQrSvg(null);
+          setQrState({
+            error: true,
+            svg: null,
+            url: pageUrl
+          });
         }
       });
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [pageUrl]);
+
+  const isCurrentQr = qrState.url === pageUrl;
+  const qrSvg = isCurrentQr ? qrState.svg : null;
+  const qrError = isCurrentQr && qrState.error;
 
   return (
     <section className="px-4 md:px-6">
@@ -81,6 +116,10 @@ export function SiteQrPanel({ fallbackUrl }: SiteQrPanelProps) {
             <div className="w-full max-w-[240px] rounded-[28px] border border-slate-200 bg-white p-4 shadow-lg">
               {qrSvg ? (
                 <div aria-label="QR code do site" dangerouslySetInnerHTML={{ __html: qrSvg }} />
+              ) : qrError ? (
+                <div className="flex aspect-square items-center justify-center rounded-[20px] bg-amber-50 p-6 text-sm leading-6 text-amber-950">
+                  Não foi possível gerar o QR code agora.
+                </div>
               ) : (
                 <div className="flex aspect-square items-center justify-center rounded-[20px] bg-slate-100 p-6 text-sm leading-6 text-slate-500">
                   Gerando QR code...

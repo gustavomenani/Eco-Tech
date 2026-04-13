@@ -3,6 +3,7 @@ import type { Ecopoint, MaterialCatalogItem } from "@/lib/types";
 export type EcopointFilters = {
   query: string;
   type: "all" | Ecopoint["type"];
+  city: string;
   material: string;
 };
 
@@ -23,13 +24,14 @@ export function filterEcopoints(points: Ecopoint[], filters: EcopointFilters) {
 
   return points.filter((point) => {
     const searchableText = normalizeText(
-      [point.name, point.address, point.hours, point.type, point.materialKeys.join(" ")].join(" ")
+      [point.name, point.city, point.address, point.hours, point.type, point.materialKeys.join(" ")].join(" ")
     );
     const matchesQuery = !normalizedQuery || searchableText.includes(normalizedQuery);
     const matchesType = filters.type === "all" || point.type === filters.type;
+    const matchesCity = filters.city === "all" || point.city === filters.city;
     const matchesMaterial = filters.material === "all" || point.materialKeys.includes(filters.material);
 
-    return matchesQuery && matchesType && matchesMaterial;
+    return matchesQuery && matchesType && matchesCity && matchesMaterial;
   });
 }
 
@@ -46,6 +48,10 @@ export function buildOpenStreetMapEmbedUrl(point: Pick<Ecopoint, "lat" | "lon">)
 }
 
 export function buildSchematicPoints(points: Ecopoint[]) {
+  if (points.length === 0) {
+    return [];
+  }
+
   const latitudes = points.map((point) => point.lat);
   const longitudes = points.map((point) => point.lon);
   const minLat = Math.min(...latitudes);
